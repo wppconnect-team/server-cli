@@ -14,15 +14,50 @@
  * limitations under the License.
  */
 import { initServer } from '@wppconnect/server';
-import * as path from 'path';
 import * as express from 'express';
+import * as fs from 'fs';
+import * as path from 'path';
+import mergeDeep from 'merge-deep';
 import { program } from './program';
 
-program.parse();
+let serverOptions = {};
 
+program.parse();
 const commandOptions = program.opts();
 
-const { app } = initServer(commandOptions);
+if (commandOptions.config) {
+  try {
+    const json = fs.readFileSync(commandOptions.config, { encoding: 'utf8' });
+    const configOptions = JSON.parse(json);
+
+    serverOptions = mergeDeep({}, serverOptions, configOptions);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+
+  delete commandOptions.config;
+}
+
+const subOptions = ['webhook', 'archive', 'log', 'createOptions'];
+
+for (const key in commandOptions) {
+  const opt = subOptions.find((opt) => key.startsWith(opt));
+
+  if (opt) {
+    commandOptions[opt] = commandOptions[opt] || {};
+
+    const name = key.substr(opt.length);
+    const newName = name[0].toLowerCase() + name.slice(1);
+
+    commandOptions[opt][newName] = commandOptions[key];
+    delete commandOptions[key];
+  }
+}
+
+serverOptions = mergeDeep({}, serverOptions, commandOptions);
+
+const { app } = initServer(serverOptions);
 
 const frontendPath = path.join(
   path.dirname(require.resolve('@wppconnect/frontend/package.json')),
