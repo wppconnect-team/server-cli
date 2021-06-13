@@ -1,0 +1,51 @@
+{
+  "name": "@wppconnect/server-cli",
+  "version": "0.1.0",
+  "description": "Servidor de WPPConnect com frontend para ser executado a partir de uma linha de comando",
+  "main": "dist/index.js",
+  "author": "edgardmessias",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "rimraf dist && babel src -s -D -d dist",
+    "changelog:last": "conventional-changelog -p angular -r 2",
+    "changelog:preview": "conventional-changelog -p angular -u",
+    "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "commit": "cz",
+    "license:add": "license-check-and-add add",
+    "license:check": "license-check-and-add check",
+    "lint": "eslint --ext .js src",
+    "prepare": "husky install",
+    "release": "release-it",
+    "start": "babel-node src",
+    "watch": "nodemon -w src --exec \"babel-node src\""
+  },
+  "dependencies": {
+    "@wppconnect/frontend": "^1.0.0",
+    "@wppconnect/server": "^1.0.1",
+    "commander": "^7.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "@babel/eslint-parser": "^7.14.5",
+    "@babel/eslint-plugin": "^7.14.5",
+    "@babel/node": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-angular": "^12.1.4",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "license-check-and-add": "^4.0.2",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "pretty-quick": "^3.1.0",
+    "release-it": "^14.8.0",
+    "rimraf": "^3.0.2"
+  }
+}
