@@ -2,6 +2,9 @@
   "name": "@wppconnect/server-cli",
   "version": "0.1.0",
   "description": "Servidor de WPPConnect com frontend para ser executado a partir de uma linha de comando",
+  "bin": {
+    "wppserver": "./bin/wppserver.js"
+  },
   "main": "dist/index.js",
   "author": "edgardmessias",
   "license": "Apache-2.0",

@@ -20,68 +20,70 @@ import * as path from 'path';
 import mergeDeep from 'merge-deep';
 import { program } from './program';
 
-let serverOptions = {};
+export function run() {
+  let serverOptions = {};
 
-program.parse();
-const commandOptions = program.opts();
+  program.parse();
+  const commandOptions = program.opts();
 
-if (commandOptions.config) {
-  try {
-    const json = fs.readFileSync(commandOptions.config, { encoding: 'utf8' });
-    const configOptions = JSON.parse(json);
+  if (commandOptions.config) {
+    try {
+      const json = fs.readFileSync(commandOptions.config, { encoding: 'utf8' });
+      const configOptions = JSON.parse(json);
 
-    serverOptions = mergeDeep({}, serverOptions, configOptions);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
+      serverOptions = mergeDeep({}, serverOptions, configOptions);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+
+    delete commandOptions.config;
   }
 
-  delete commandOptions.config;
-}
+  const subOptions = ['webhook', 'archive', 'log', 'createOptions'];
 
-const subOptions = ['webhook', 'archive', 'log', 'createOptions'];
+  for (const key in commandOptions) {
+    const opt = subOptions.find((opt) => key.startsWith(opt));
 
-for (const key in commandOptions) {
-  const opt = subOptions.find((opt) => key.startsWith(opt));
+    if (opt) {
+      commandOptions[opt] = commandOptions[opt] || {};
 
-  if (opt) {
-    commandOptions[opt] = commandOptions[opt] || {};
+      const name = key.substr(opt.length);
+      const newName = name[0].toLowerCase() + name.slice(1);
 
-    const name = key.substr(opt.length);
-    const newName = name[0].toLowerCase() + name.slice(1);
-
-    commandOptions[opt][newName] = commandOptions[key];
-    delete commandOptions[key];
+      commandOptions[opt][newName] = commandOptions[key];
+      delete commandOptions[key];
+    }
   }
-}
 
-serverOptions = mergeDeep({}, serverOptions, commandOptions);
+  serverOptions = mergeDeep({}, serverOptions, commandOptions);
 
-const { app } = initServer(serverOptions);
+  const { app } = initServer(serverOptions);
 
-const frontendPath = path.join(
-  path.dirname(require.resolve('@wppconnect/frontend/package.json')),
-  'build'
-);
+  const frontendPath = path.join(
+    path.dirname(require.resolve('@wppconnect/frontend/package.json')),
+    'build'
+  );
 
-// Requisição de configuração do frontend
-app.use('/config.js', (req, res) => {
-  res.set({
-    'Content-Type': 'application/javascript; charset=UTF-8',
-  });
-  res.send(`
+  // Requisição de configuração do frontend
+  app.use('/config.js', (req, res) => {
+    res.set({
+      'Content-Type': 'application/javascript; charset=UTF-8',
+    });
+    res.send(`
 // Arquivo gerado automaticamente
 window.IP_SERVER = location.protocol + "//" + location.host + '/api/';
 window.IP_SOCKET_IO = ((location.protocol === 'https:') ? 'wss:' : 'ws:') + "//" + location.host;
 `);
-});
+  });
 
-app.use(express.static(frontendPath));
+  app.use(express.static(frontendPath));
 
-app.get('*', function (req, res, next) {
-  // Força a renderização do react para requisições do browser
-  if (req.accepts('html')) {
-    return res.sendfile(path.join(frontendPath, 'index.html'));
-  }
-  next();
-});
+  app.get('*', function (req, res, next) {
+    // Força a renderização do react para requisições do browser
+    if (req.accepts('html')) {
+      return res.sendfile(path.join(frontendPath, 'index.html'));
+    }
+    next();
+  });
+}
