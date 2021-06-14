@@ -72,13 +72,3 @@ jobs:
           body: ${{ steps.generate_changelog.outputs.changelog }}
           draft: false
           prerelease: false
-
-      - name: Build Swagger Page
-        run: yarn swagger:generate
-
-      - name: Deploy Page
-        uses: peaceiris/actions-gh-pages@v3
-        continue-on-error: true
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./swagger-docs
