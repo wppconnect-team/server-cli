@@ -20,60 +20,30 @@ export const program = new Command();
 program.version(packageJSON.version);
 
 //#region comum
-program.option(
-  '-c, --config',
-  'Arquivo JSON de configuração para inicialização'
-);
+program.option('-c, --config', 'Arquivo JSON de configuração para inicialização');
 
 // Host
 program.option('-h, --host <host>', 'Host de execução');
 program.option('-p, --port <numero>', 'Porta de execução');
-program.option(
-  '-k, --secretKey <chave>',
-  'Chave secreta para validação de tokens'
-);
-program.option(
-  '--startAllSession',
-  'Habilita a auto inicialização das sessões'
-);
-program.option(
-  '--no-startAllSession',
-  'Desabilita a auto inicialização das sessões'
-);
+program.option('-k, --secretKey <chave>', 'Chave secreta para validação de tokens');
+program.option('--startAllSession', 'Habilita a auto inicialização das sessões');
+program.option('--no-startAllSession', 'Desabilita a auto inicialização das sessões');
 //#endregion
 
 //#region webhook
 program.option('--webhook-url <url>', 'URL para as chamadas de webhook');
 program.option('--webhook-autoDownload', 'Habilita o auto download de arquivo');
-program.option(
-  '--no-webhook-autoDownload',
-  'Desabilita o auto download de arquivo'
-);
-program.option(
-  '--webhook-readMessage',
-  'Habilita a marcação automática de lido'
-);
-program.option(
-  '--no-webhook-readMessage',
-  'DesHabilita a marcação automática de lido'
-);
-program.option(
-  '--webhook-allUnreadOnStart',
-  'Envia no webhook todas as mensagens não lidas na inicialização'
-);
+program.option('--no-webhook-autoDownload', 'Desabilita o auto download de arquivo');
+program.option('--webhook-readMessage', 'Habilita a marcação automática de lido');
+program.option('--no-webhook-readMessage', 'DesHabilita a marcação automática de lido');
+program.option('--webhook-allUnreadOnStart', 'Envia no webhook todas as mensagens não lidas na inicialização');
 //#endregion
 
 //#region archive
 program.option('--archive-enable', 'Habilita o auto-arquivamento');
 program.option('--no-archive-enable', 'Desabilita o auto-arquivamento');
-program.option(
-  '--archive-waitTime <milisegundos>',
-  'Tempo de espera de arquivamento entre chats'
-);
-program.option(
-  '--archive-daysToArchive <dias>',
-  'Dias de inatividade para arquivar'
-);
+program.option('--archive-waitTime <milisegundos>', 'Tempo de espera de arquivamento entre chats');
+program.option('--archive-daysToArchive <dias>', 'Dias de inatividade para arquivar');
 //#endregion
 
 //#region log
@@ -82,8 +52,5 @@ program.option('--log-logger <saidas...>', 'Opções de saída de LOG');
 //#endregion
 
 //#region createOptions
-program.option(
-  '--createOptions-browserArgs <opcoes...>',
-  'Opções para serem passadas na inicialização do browser'
-);
+program.option('--createOptions-browserArgs <opcoes...>', 'Opções para serem passadas na inicialização do browser');
 //#endregion

@@ -60,10 +60,7 @@ export function run() {
 
   const { app } = initServer(serverOptions);
 
-  const frontendPath = path.join(
-    path.dirname(require.resolve('@wppconnect/frontend/package.json')),
-    'build'
-  );
+  const frontendPath = path.join(path.dirname(require.resolve('@wppconnect/frontend/package.json')), 'build');
 
   // Requisição de configuração do frontend
   app.use('/config.js', (req, res) => {
