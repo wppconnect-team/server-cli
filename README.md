@@ -29,3 +29,21 @@ wppserver --port 8000
 ```sh
 wppserver --help
 ```
+
+## Frontend
+
+Para adicionar o frontend automaticamente, basta instalar
+
+```sh
+yarn global add @wppconnect/frontend
+//ou
+npm install -g @wppconnect/frontend
+```
+
+E executar
+
+```sh
+wppserver --frontend
+//ou
+wppserver --frontend-path <caminho do frontend (pasta dist)>
+```

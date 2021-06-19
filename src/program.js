@@ -19,6 +19,11 @@ export const program = new Command();
 
 program.version(packageJSON.version);
 
+//#region frontend
+program.option('--frontend', 'Habilita o frontend');
+program.option('--frontend-path', 'Caminho dos arquivos de frontend (pasta dist)');
+//#endregion
+
 //#region comum
 program.option('-c, --config', 'Arquivo JSON de configuração para inicialização');
 
@@ -35,7 +40,7 @@ program.option('--webhook-url <url>', 'URL para as chamadas de webhook');
 program.option('--webhook-autoDownload', 'Habilita o auto download de arquivo');
 program.option('--no-webhook-autoDownload', 'Desabilita o auto download de arquivo');
 program.option('--webhook-readMessage', 'Habilita a marcação automática de lido');
-program.option('--no-webhook-readMessage', 'DesHabilita a marcação automática de lido');
+program.option('--no-webhook-readMessage', 'Desabilita a marcação automática de lido');
 program.option('--webhook-allUnreadOnStart', 'Envia no webhook todas as mensagens não lidas na inicialização');
 //#endregion
 

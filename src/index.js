@@ -60,27 +60,50 @@ export function run() {
 
   const { app } = initServer(serverOptions);
 
-  const frontendPath = path.join(path.dirname(require.resolve('@wppconnect/frontend/package.json')), 'build');
+  if (commandOptions.frontend) {
+    let frontendPath = commandOptions.frontendPath;
 
-  // Requisição de configuração do frontend
-  app.use('/config.js', (req, res) => {
-    res.set({
-      'Content-Type': 'application/javascript; charset=UTF-8',
-    });
-    res.send(`
+    if (!frontendPath) {
+      let frontendPackage;
+      try {
+        const frontendPackage = require.resolve('@wppconnect/frontend/package.json');
+        frontendPath = path.join(path.dirname(frontendPackage), 'build');
+      } catch (error) {
+        console.error(
+          'Não foi encontrado o caminho para o frontend, por favor defina com --frontend-path ou instale o pacote @wppconnect/frontend'
+        );
+        process.exit(1);
+      }
+
+      console.log(frontendPackage);
+    }
+
+    if (frontendPath) {
+      // Requisição de configuração do frontend
+      app.use('/config.js', (req, res) => {
+        res.set({
+          'Content-Type': 'application/javascript; charset=UTF-8',
+        });
+        res.send(`
 // Arquivo gerado automaticamente
 window.IP_SERVER = location.protocol + "//" + location.host + '/api/';
 window.IP_SOCKET_IO = ((location.protocol === 'https:') ? 'wss:' : 'ws:') + "//" + location.host;
 `);
-  });
+      });
 
-  app.use(express.static(frontendPath));
+      app.use(express.static(frontendPath));
 
-  app.get('*', function (req, res, next) {
-    // Força a renderização do react para requisições do browser
-    if (req.accepts('html')) {
-      return res.sendfile(path.join(frontendPath, 'index.html'));
+      app.get('*', function (req, res, next) {
+        // Força a renderização do react para requisições do browser
+        if (req.accepts('html')) {
+          return res.sendfile(path.join(frontendPath, 'index.html'));
+        }
+        next();
+      });
     }
-    next();
-  });
+  }
+}
+
+if (process.env['RUN_SERVER']) {
+  run();
 }

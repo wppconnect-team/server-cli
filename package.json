@@ -19,7 +19,7 @@
     "lint": "eslint --ext .js src",
     "prepare": "husky install",
     "release": "release-it",
-    "start": "babel-node src",
+    "start": "cross-env RUN_SERVER=1 babel-node src",
     "watch": "nodemon -w src --exec \"babel-node src\""
   },
   "config": {
@@ -28,7 +28,6 @@
     }
   },
   "dependencies": {
-    "@wppconnect/frontend": "^1.0.0",
     "@wppconnect/server": "^1.0.1",
     "commander": "^7.2.0",
     "merge-deep": "^3.0.3"
@@ -44,8 +43,10 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@commitlint/cz-commitlint": "^12.1.4",
+    "@wppconnect/frontend": "^1.0.0",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
