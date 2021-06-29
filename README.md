@@ -47,3 +47,7 @@ wppserver --frontend
 //ou
 wppserver --frontend-path <caminho do frontend (pasta dist)>
 ```
+
+## Tutorial - Youtube
+- Veja o tutorial de uso no [Canal WPPConnect](https://www.youtube.com/watch?v=zBmCnPS3JOQ).
+
