@@ -64,7 +64,6 @@ export function run() {
     let frontendPath = commandOptions.frontendPath;
 
     if (!frontendPath) {
-      let frontendPackage;
       try {
         const frontendPackage = require.resolve('@wppconnect/frontend/package.json');
         frontendPath = path.join(path.dirname(frontendPackage), 'build');
@@ -74,8 +73,6 @@ export function run() {
         );
         process.exit(1);
       }
-
-      console.log(frontendPackage);
     }
 
     if (frontendPath) {
