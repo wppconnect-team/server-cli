@@ -9,20 +9,20 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
-        id: release
-        with:
-          release-type: node
-
       - name: Checkout
-        if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
       - name: Fetching tags
-        if: ${{ steps.release.outputs.release_created }}
         run: git fetch --tags -f || true
+
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          command: manifest
+          release-type: node
 
       - name: Setup Node
         uses: actions/setup-node@v1
