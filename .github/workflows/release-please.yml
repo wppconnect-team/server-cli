@@ -12,7 +12,9 @@ jobs:
       - uses: GoogleCloudPlatform/release-please-action@v2
         id: release
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
+          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
 
       - name: Checkout
         if: ${{ steps.release.outputs.release_created }}
@@ -25,6 +27,7 @@ jobs:
         run: git fetch --tags -f || true
 
       - name: Setup Node
+        if: ${{ steps.release.outputs.release_created }}
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
