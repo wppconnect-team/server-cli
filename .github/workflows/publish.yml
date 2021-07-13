@@ -1,34 +1,24 @@
-name: release-please
+name: Publish
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
-  release-please:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
-        id: release
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: node
-          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":true}]'
-
       - name: Checkout
-        if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
       - name: Fetching tags
-        if: ${{ steps.release.outputs.release_created }}
         run: git fetch --tags -f || true
 
       - name: Setup Node
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
           registry-url: 'https://registry.npmjs.org'
@@ -36,13 +26,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Get yarn cache directory
-        if: ${{ steps.release.outputs.release_created }}
         id: yarn-cache
         run: |
           echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Setup yarn cache
-        if: ${{ steps.release.outputs.release_created }}
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
@@ -51,24 +39,20 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        if: ${{ steps.release.outputs.release_created }}
         run: yarn install
         env:
           PUPPETEER_SKIP_DOWNLOAD: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Build
-        if: ${{ steps.release.outputs.release_created }}
         run: yarn build
 
       - name: Publish in NPM
-        if: ${{ steps.release.outputs.release_created }}
         run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Generate Changelog
-        if: ${{ steps.release.outputs.release_created }}
         id: generate_changelog
         run: |
           changelog=$(npm run changelog:last --silent)
@@ -78,7 +62,6 @@ jobs:
           echo -e "::set-output name=changelog::${changelog}\n"
 
       - name: Create Release
-        if: ${{ steps.release.outputs.release_created }}
         id: create_release
         uses: actions/create-release@v1
         env:
