@@ -1,3 +1,12 @@
+## 1.1.3 (2021-07-15)
+
+
+### Bug Fixes
+
+* adicionado novas opções do webhook ([#26](https://github.com/wppconnect-team/server-cli/issues/26)) ([d08093f](https://github.com/wppconnect-team/server-cli/commit/d08093ffa98adc8620777184542747b764a36f78))
+
+
+
 # Changelog
 
 ### [1.1.2](https://www.github.com/wppconnect-team/server-cli/compare/v1.1.1...v1.1.2) (2021-07-07)
