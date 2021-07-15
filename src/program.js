@@ -42,6 +42,9 @@ program.option('--no-webhook-autoDownload', 'Desabilita o auto download de arqui
 program.option('--webhook-readMessage', 'Habilita a marcação automática de lido');
 program.option('--no-webhook-readMessage', 'Desabilita a marcação automática de lido');
 program.option('--webhook-allUnreadOnStart', 'Envia no webhook todas as mensagens não lidas na inicialização');
+program.option('--no-webhook-listenAcks', 'Desabilita o envio de ACKs no webhook');
+program.option('--no-webhook-onPresenceChanged', 'Desabilita o envio do onPresenceChanged no webhook');
+program.option('--no-webhook-onParticipantsChanged', 'Desabilita o envio do onParticipantsChanged no webhook');
 //#endregion
 
 //#region archive
