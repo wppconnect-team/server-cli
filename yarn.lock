@@ -1490,11 +1490,12 @@
   dependencies:
     "@types/node" "*"
 
-"@wppconnect-team/wppconnect@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.6.0.tgz#c02858ae418d59a59c1598228d88d425c6e6deef"
-  integrity sha512-LeCRZKehtbUOWmL2YXzshGDRq21cqsHMn4A0xSVfWLtPFAxnoMr3QpRqPgJtIu3bAMtRKKAWwPVY3tnBIkPGpQ==
+"@wppconnect-team/wppconnect@^1.8.0":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.8.9.tgz#ce33b508956a026eec64db96bdb250a7f6dd54b3"
+  integrity sha512-5ImyuTcGGt6lL7JYdTGJxx8v2Ourid/lhAlK9K6CnPejg4Q3xUWHFLEjfzTkqm3OQtbqQhkIxsCsTuOF8NgKHw==
   dependencies:
+    "@wppconnect/wa-version" "^1.1.3"
     atob "^2.1.2"
     axios "^0.21.1"
     boxen "^5.0.0"
@@ -1506,9 +1507,9 @@
     latest-version "^5.1.0"
     lookpath "^1.2.0"
     mime-types "^2.1.28"
-    puppeteer "^5.5.0"
-    puppeteer-extra "^3.1.16"
-    puppeteer-extra-plugin-stealth "^2.6.6"
+    puppeteer "5.4.1"
+    puppeteer-extra "^3.1.18"
+    puppeteer-extra-plugin-stealth "^2.7.8"
     qrcode-terminal "^0.12.0"
     reflect-metadata "^0.1.13"
     rimraf "^3.0.2"
@@ -1526,22 +1527,31 @@
   integrity sha512-80UsxtYMxsD435FcOXhtw2utyctNSoP4agQsgUhE4+McUdBd/tlIINFbUjwu8Pw3qSg0sYNpYYrJamMxSurzow==
 
 "@wppconnect/server@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.0.1.tgz#a833e03d9b669f37c255761fc9c97868ae6b29c7"
-  integrity sha512-Hx5K/FYv6zR3A/e6zRgHUKkr92esocMDpCNPeyuKyHu4B7oz9ayGFZEtGvnE2lOSDcESOTPDogdcbkvLiLpe0Q==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.0.3.tgz#41dcd1c1ffa3c1963ab3be0247e378f64a15a018"
+  integrity sha512-IfpOZRTxEm+rPaut6dMkZwlyOtGtUj/CMgdpug+hWyFPNC6VU2324BiNF7grK9vJcmRFL5Un+WqvE1/xz3XnQw==
   dependencies:
-    "@wppconnect-team/wppconnect" "^1.6.0"
+    "@wppconnect-team/wppconnect" "^1.8.0"
     axios "^0.21.1"
     bcrypt "^5.0.1"
     cors "^2.8.5"
     express "^4.17.1"
     express-query-boolean "^2.0.0"
+    json-mapper-json "^1.3.3"
     lodash "^4.17.21"
     merge-deep "^3.0.3"
     moment "^2.29.1"
     multer "^1.4.2"
     socket.io "^4.1.2"
     swagger-ui-express "^4.1.6"
+
+"@wppconnect/wa-version@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.3.tgz#69d255a62c20df4b2b57af8ad0eae4978e24c2fd"
+  integrity sha512-PLk/v3bDUe1M7yU3jUSgm0DTXvDXo/C4YniGCHAN2tp0kWZgRy9jnK4DAGdEZbf5wJRLfa0TvsJGsyqXGdrgyA==
+  dependencies:
+    node-fetch "^2.6.1"
+    semver "^7.3.5"
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -1910,6 +1920,11 @@ bl@^4.0.3, bl@^4.1.0:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
+bluebird@^3.5.5:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
+  integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
 body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
@@ -1996,6 +2011,13 @@ browserslist@^4.16.6:
     escalade "^3.1.1"
     node-releases "^1.1.71"
 
+bson@*:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.4.1.tgz#682c3cb8b90b222414ce14ef8398154ba2cc21bc"
+  integrity sha512-Uu4OCZa0jouQJCKOk1EmmyqtdWAP5HVLru4lQxTwzJzxT+sJ13lVpEZU/MATDxtHiekWMAL84oQY3Xn1LpJVSg==
+  dependencies:
+    buffer "^5.6.0"
+
 buffer-crc32@~0.2.3:
   version "0.2.13"
   resolved "https://registry.yarnpkg.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz#0d333e3f00eac50aa1454abd30ef8c2a5d9a7242"
@@ -2006,7 +2028,7 @@ buffer-from@^1.0.0:
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
 
-buffer@^5.2.1, buffer@^5.5.0:
+buffer@^5.2.1, buffer@^5.5.0, buffer@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.7.1.tgz#ba62e7c13133053582197160851a8f648e99eed0"
   integrity sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==
@@ -2940,10 +2962,10 @@ detect-libc@^1.0.3:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
-devtools-protocol@0.0.818844:
-  version "0.0.818844"
-  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.818844.tgz#d1947278ec85b53e4c8ca598f607a28fa785ba9e"
-  integrity sha512-AD1hi7iVJ8OD0aMLQU5VK0XH9LDlA1+BcPIgrAxPfaibx2DbWucuyOhc4oyQCbnvDDO68nN6/LcKfqTP343Jjg==
+devtools-protocol@0.0.809251:
+  version "0.0.809251"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.809251.tgz#300b3366be107d5c46114ecb85274173e3999518"
+  integrity sha512-pf+2OY6ghMDPjKkzSWxHMq+McD+9Ojmq5XVRYpv/kPd9sTMQxzEt21592a31API8qRjro0iYYOc3ag46qF/1FA==
 
 dicer@0.2.5:
   version "0.2.5"
@@ -4694,6 +4716,15 @@ json-buffer@3.0.1:
   resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.1.tgz#9338802a30d3b6605fbe0613e094008ca8c05a13"
   integrity sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==
 
+json-mapper-json@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/json-mapper-json/-/json-mapper-json-1.3.3.tgz#2a4cf9b3acaddb009e6aa1138cf84d79e3e1ad85"
+  integrity sha512-tvi0UQZLP0Q6fXgSO+ugjPLbDlgVgJw7PWMnYGyes//XHlHDl3l1ptDxwZ1u+9hBpy8xlU4Ukimvw2JNh4etng==
+  dependencies:
+    bluebird "^3.5.5"
+    bson "*"
+    lodash "^4.17.11"
+
 json-parse-better-errors@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
@@ -4932,7 +4963,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@4.17.21, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
+lodash@4.17.21, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -6015,7 +6046,7 @@ pupa@^2.0.1, pupa@^2.1.1:
   dependencies:
     escape-goat "^2.0.0"
 
-puppeteer-extra-plugin-stealth@^2.6.6:
+puppeteer-extra-plugin-stealth@^2.7.8:
   version "2.7.8"
   resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.7.8.tgz#7424c955e25351a55024734477059c988647047c"
   integrity sha512-Zhm/WY/BAk9VGdZR5OVpiwfGn2NoAzEb0hdu3/PGRryfenn8Dtoai8aUa8GzFPExWL+yGPsztswupH+3TV3M2A==
@@ -6052,7 +6083,7 @@ puppeteer-extra-plugin@^3.1.9:
     debug "^4.1.1"
     merge-deep "^3.0.1"
 
-puppeteer-extra@^3.1.16:
+puppeteer-extra@^3.1.18:
   version "3.1.18"
   resolved "https://registry.yarnpkg.com/puppeteer-extra/-/puppeteer-extra-3.1.18.tgz#4269018e55f7ee62788d13e3eb3d89e842a3d48e"
   integrity sha512-mGQyAnxaGcZomx7NVC4wgAkZl0MLTdE/GIfwRSbLJ9L4yIxPg9uEA3yiLBe+x09tjhTGEtv8KDef8Bl53RXgiA==
@@ -6062,13 +6093,13 @@ puppeteer-extra@^3.1.16:
     debug "^4.1.1"
     deepmerge "^4.2.2"
 
-puppeteer@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-5.5.0.tgz#331a7edd212ca06b4a556156435f58cbae08af00"
-  integrity sha512-OM8ZvTXAhfgFA7wBIIGlPQzvyEETzDjeRa4mZRCRHxYL+GNH5WAuYUQdja3rpWZvkX/JKqmuVgbsxDNsDFjMEg==
+puppeteer@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-5.4.1.tgz#f2038eb23a0f593ed2cce0d6e7cd5c43aecd6756"
+  integrity sha512-8u6r9tFm3gtMylU4uCry1W/CeAA8uczKMONvGvivkTsGqKA7iB7DWO2CBFYlB9GY6/IEoq9vkI5slJWzUBkwNw==
   dependencies:
     debug "^4.1.0"
-    devtools-protocol "0.0.818844"
+    devtools-protocol "0.0.809251"
     extract-zip "^2.0.0"
     https-proxy-agent "^4.0.0"
     node-fetch "^2.6.1"
