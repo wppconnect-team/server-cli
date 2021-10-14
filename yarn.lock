@@ -1520,19 +1520,19 @@
   dependencies:
     "@types/node" "*"
 
-"@wppconnect-team/wppconnect@^1.8.14":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.9.1.tgz#1c004b0684af36ca53f42c27964eff406ca9cdbf"
-  integrity sha512-0YLeFiwKWovpokB5b53Zl7jLtJ3HZh66s4WnOht2egvqoQWuqv4LDD9WHMcjAg8Mz4C0wQl8V8wt+yjvu1B43Q==
+"@wppconnect-team/wppconnect@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.9.2.tgz#e7a6d421654fd116121a05cf891329baa79df4fe"
+  integrity sha512-+8Tm+QnQqXr2/CizOebunSBWVWIBjf5CGqJe9RBul/V9i+DtyTFS25/zt3LXSJWMDosTyrCk6gsgzTUtVL3zHA==
   dependencies:
-    "@wppconnect/wa-js" "^1.0.4"
+    "@wppconnect/wa-js" "^1.0.6"
     "@wppconnect/wa-version" "^1.1.14"
     atob "^2.1.2"
     axios "^0.22.0"
     boxen "^5.1.2"
     catch-exit "^1.1.0"
     chalk "^4.0.0"
-    chrome-launcher "^0.14.0"
+    chrome-launcher "^0.14.1"
     execa "^5.0.0"
     file-type "^16.5.3"
     futoin-hkdf "^1.3.2"
@@ -1542,7 +1542,7 @@
     mime-types "^2.1.33"
     puppeteer "*"
     puppeteer-extra "^3.2.3"
-    puppeteer-extra-plugin-stealth "^2.8.1"
+    puppeteer-extra-plugin-stealth "^2.8.2"
     puppeteer-extra-plugin-user-data-dir "^2.3.1"
     puppeteer-extra-plugin-user-preferences "^2.3.1"
     qrcode-terminal "^0.12.0"
@@ -1563,12 +1563,12 @@
   integrity sha512-80UsxtYMxsD435FcOXhtw2utyctNSoP4agQsgUhE4+McUdBd/tlIINFbUjwu8Pw3qSg0sYNpYYrJamMxSurzow==
 
 "@wppconnect/server@^1.0.1":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.1.5.tgz#626ad1aae0cfb2a008dc281895d0b51d2b4a46ec"
-  integrity sha512-Fc9Gw+zfPMNtl00Y2esvROIBysRmrP7yv6Fnjfrbf1g94GKiI3VMJVDdy4jS0SHRNmSE2ZvgNlw3HA8JC76tfQ==
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.1.6.tgz#0e212d774a159c18b0ca7be8b38eb704da50418d"
+  integrity sha512-EMakzLKpXhyetmmvYJ0590P6A+zgtwEhkUsef9LOTgpOPhgifl6FFz+we+RjNBZuYXSDbrSgjNK/ijlpBK6QgQ==
   dependencies:
-    "@wppconnect-team/wppconnect" "^1.8.14"
-    axios "^0.21.1"
+    "@wppconnect-team/wppconnect" "^1.9.2"
+    axios "^0.23.0"
     bcrypt "^5.0.1"
     buffer-to-stream "1.0.0"
     cors "^2.8.5"
@@ -1583,10 +1583,10 @@
     socket.io "^4.1.2"
     swagger-ui-express "^4.1.6"
 
-"@wppconnect/wa-js@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-1.0.4.tgz#c954e58164b32ab2e7d0166f74c1e91e8897588d"
-  integrity sha512-V/lNdCoofy6ohwk1qfeRPt7FgiADT1ODYJTySMCAtbjz+CKBTT/o66o91mgy2sPBsN865d7/HeDl0w9A61YvIg==
+"@wppconnect/wa-js@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-1.0.6.tgz#0b94db014391c9bfa2b0a8df58ed7d19816118f9"
+  integrity sha512-k8r8NuoHQrLB6GoiBFsrE5j65Xwbnxqn/IU9bVYJnj3kkNbuDJHjUGRYISHT+j4K3pp0GaIFQuVUCDhjdG7wyw==
 
 "@wppconnect/wa-version@^1.1.14":
   version "1.1.14"
@@ -1812,17 +1812,17 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  dependencies:
-    follow-redirects "^1.10.0"
-
 axios@^0.22.0:
   version "0.22.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.22.0.tgz#bf702c41fb50fbca4539589d839a077117b79b25"
   integrity sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==
+  dependencies:
+    follow-redirects "^1.14.4"
+
+axios@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.23.0.tgz#b0fa5d0948a8d1d75e3d5635238b6c4625b05149"
+  integrity sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==
   dependencies:
     follow-redirects "^1.14.4"
 
@@ -2186,10 +2186,10 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chrome-launcher@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.14.0.tgz#de8d8a534ccaeea0f36ea8dc12dd99e3169f3320"
-  integrity sha512-W//HpflaW6qBGrmuskup7g+XJZN6w03ko9QSIe5CtcTal2u0up5SeReK3Ll1Why4Ey8dPkv8XSodZyHPnGbVHQ==
+chrome-launcher@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.14.1.tgz#e885e706f26cc7a07d348e730fe12f15e43b0881"
+  integrity sha512-iQ4s61NkIyaozsE2VKg1Vu3YGdD3JGw+fBBrt3FYJi7uflO9TvlTLW4MUq0fq3EKGhzB/QHPd5AsLb14+9++JQ==
   dependencies:
     "@types/node" "*"
     escape-string-regexp "^4.0.0"
@@ -3547,11 +3547,6 @@ fn.name@1.x.x:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
-
-follow-redirects@^1.10.0:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
-  integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
 
 follow-redirects@^1.14.4:
   version "1.14.4"
@@ -5780,10 +5775,10 @@ pupa@^2.1.1:
   dependencies:
     escape-goat "^2.0.0"
 
-puppeteer-extra-plugin-stealth@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.8.1.tgz#14c5a2c760cea207632e4f29ccccdfb668553cba"
-  integrity sha512-UFCxt0+NkYROGzCK0voUwYA/WxC+m1jBYXasYZ6qxTcjIa3oN8f3Am6oGnhCPoO5OJv5QsDJA5lzZrGVqZ7NYw==
+puppeteer-extra-plugin-stealth@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.8.2.tgz#2b9ffa56dab4aded459810d3be337d1e71b839aa"
+  integrity sha512-1WaiLKRSJ9IAnNS3jqHu9yg2O8CgSh3shPuEhhpgzVfICRb6D8JkrUBJW6UxOwI7/aQc9XSzf+lidIb9x9tj8w==
   dependencies:
     debug "^4.1.1"
     puppeteer-extra-plugin "^3.2.0"
