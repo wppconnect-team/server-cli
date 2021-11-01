@@ -42,7 +42,7 @@
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@commitlint/cli": "^14.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@commitlint/cz-commitlint": "^14.1.0",
     "@wppconnect/frontend": "^1.0.0",
     "commitizen": "^4.2.4",
