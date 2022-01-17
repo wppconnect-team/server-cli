@@ -50,7 +50,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ${{ steps.meta.outputs.tags }}
+            wppconnect/server-cli:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Image digest
