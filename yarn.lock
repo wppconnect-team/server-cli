@@ -1038,14 +1038,6 @@
   dependencies:
     conventional-changelog-conventionalcommits "^4.3.1"
 
-"@commitlint/config-validator@^16.2.1":
-  version "16.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-validator/-/config-validator-16.2.1.tgz#794e769afd4756e4cf1bfd823b6612932e39c56d"
-  integrity sha512-hogSe0WGg7CKmp4IfNbdNES3Rq3UEI4XRPB8JL4EPgo/ORq5nrGTVzxJh78omibNuB8Ho4501Czb1Er1MoDWpw==
-  dependencies:
-    "@commitlint/types" "^16.2.1"
-    ajv "^6.12.6"
-
 "@commitlint/config-validator@^17.0.0":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@commitlint/config-validator/-/config-validator-17.0.0.tgz#49ab09f3ca0ac3449e79ea389cb4942423162ac0"
@@ -1054,25 +1046,17 @@
     "@commitlint/types" "^17.0.0"
     ajv "^6.12.6"
 
-"@commitlint/cz-commitlint@^16.1.0":
-  version "16.2.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-16.2.4.tgz#89cb0b44f2c3515df09db04e863f8d6cc2a45ca7"
-  integrity sha512-lioE9TF5H36NH/KdTgrmv6CcLWXLcVqFpfZ0oNX+VuPmDVFZ5q4bQ9yQVlMbUX4AjrlsPt68cHH1jK/PoPtBfg==
+"@commitlint/cz-commitlint@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-17.0.0.tgz#f594848a84bc0764c22c79a54d6c7e219e91ed40"
+  integrity sha512-Cq5rb3pUJRIp8M17/w8iUmDup/7KOZVt3OSDa3LKym9y9Y7/7MhiOHfWvTYcMJIOYT7TRbxVycbVvx5hPPjZ/A==
   dependencies:
-    "@commitlint/ensure" "^16.2.1"
-    "@commitlint/load" "^16.2.4"
-    "@commitlint/types" "^16.2.1"
+    "@commitlint/ensure" "^17.0.0"
+    "@commitlint/load" "^17.0.0"
+    "@commitlint/types" "^17.0.0"
     chalk "^4.1.0"
     lodash "^4.17.21"
     word-wrap "^1.2.3"
-
-"@commitlint/ensure@^16.2.1":
-  version "16.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-16.2.1.tgz#0fc538173f95c1eb2694eeedb79cab478347f16f"
-  integrity sha512-/h+lBTgf1r5fhbDNHOViLuej38i3rZqTQnBTk+xEg+ehOwQDXUuissQ5GsYXXqI5uGy+261ew++sT4EA3uBJ+A==
-  dependencies:
-    "@commitlint/types" "^16.2.1"
-    lodash "^4.17.19"
 
 "@commitlint/ensure@^17.0.0":
   version "17.0.0"
@@ -1081,11 +1065,6 @@
   dependencies:
     "@commitlint/types" "^17.0.0"
     lodash "^4.17.19"
-
-"@commitlint/execute-rule@^16.2.1":
-  version "16.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-16.2.1.tgz#60be73be4b9af97a41546e7ce59fdd33787c65f8"
-  integrity sha512-oSls82fmUTLM6cl5V3epdVo4gHhbmBFvCvQGHBRdQ50H/690Uq1Dyd7hXMuKITCIdcnr9umyDkr8r5C6HZDF3g==
 
 "@commitlint/execute-rule@^17.0.0":
   version "17.0.0"
@@ -1135,23 +1114,6 @@
     resolve-from "^5.0.0"
     typescript "^4.6.4"
 
-"@commitlint/load@^16.2.4":
-  version "16.2.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-16.2.4.tgz#32c9f4c6538b21cf48cf40266312bb1adb65f435"
-  integrity sha512-HjANm3/29ROV+zt4yfaY/K6gpr9Dbzgtlp0kSwZGW0poDXlD/yqVYgPQ6JolJzZii5FUz5R4yVLC15hVL/w60w==
-  dependencies:
-    "@commitlint/config-validator" "^16.2.1"
-    "@commitlint/execute-rule" "^16.2.1"
-    "@commitlint/resolve-extends" "^16.2.1"
-    "@commitlint/types" "^16.2.1"
-    "@types/node" ">=12"
-    chalk "^4.0.0"
-    cosmiconfig "^7.0.0"
-    cosmiconfig-typescript-loader "^1.0.0"
-    lodash "^4.17.19"
-    resolve-from "^5.0.0"
-    typescript "^4.4.3"
-
 "@commitlint/message@^17.0.0":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@commitlint/message/-/message-17.0.0.tgz#ae0f8ec6a3e5c8d369792a2c391952c7596cca73"
@@ -1175,18 +1137,6 @@
     "@commitlint/types" "^17.0.0"
     fs-extra "^10.0.0"
     git-raw-commits "^2.0.0"
-
-"@commitlint/resolve-extends@^16.2.1":
-  version "16.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-16.2.1.tgz#2f7833a5a3a7aa79f508e59fcb0f1d33c45ed360"
-  integrity sha512-NbbCMPKTFf2J805kwfP9EO+vV+XvnaHRcBy6ud5dF35dxMsvdJqke54W3XazXF1ZAxC4a3LBy4i/GNVBAthsEg==
-  dependencies:
-    "@commitlint/config-validator" "^16.2.1"
-    "@commitlint/types" "^16.2.1"
-    import-fresh "^3.0.0"
-    lodash "^4.17.19"
-    resolve-from "^5.0.0"
-    resolve-global "^1.0.0"
 
 "@commitlint/resolve-extends@^17.0.0":
   version "17.0.0"
@@ -1222,13 +1172,6 @@
   integrity sha512-dZrEP1PBJvodNWYPOYiLWf6XZergdksKQaT6i1KSROLdjf5Ai0brLOv5/P+CPxBeoj3vBxK4Ax8H1Pg9t7sHIQ==
   dependencies:
     find-up "^5.0.0"
-
-"@commitlint/types@^16.2.1":
-  version "16.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-16.2.1.tgz#f25d373b88b01e51fc3fa44488101361945a61bd"
-  integrity sha512-7/z7pA7BM0i8XvMSBynO7xsB3mVQPUZbVn6zMIlp/a091XJ3qAXRXc+HwLYhiIdzzS5fuxxNIHZMGHVD4HJxdA==
-  dependencies:
-    chalk "^4.0.0"
 
 "@commitlint/types@^17.0.0":
   version "17.0.0"
@@ -2848,14 +2791,6 @@ cors@^2.8.5, cors@~2.8.5:
   dependencies:
     object-assign "^4"
     vary "^1"
-
-cosmiconfig-typescript-loader@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-1.0.3.tgz#528f2bb3e6b6705020dc42df659f24837e75b611"
-  integrity sha512-ARo21VjxdacJUcHxgVMEYNIoVPYiuKOEwWBIYej4M22+pEbe3LzKgmht2UPM+0u7/T/KnZf2r/5IzHv2Nwz+/w==
-  dependencies:
-    cosmiconfig "^7"
-    ts-node "^10.4.0"
 
 cosmiconfig-typescript-loader@^2.0.0:
   version "2.0.0"
@@ -7590,24 +7525,6 @@ truncate-utf8-bytes@^1.0.0:
   dependencies:
     utf8-byte-length "^1.0.1"
 
-ts-node@^10.4.0:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.4.0.tgz#680f88945885f4e6cf450e7f0d6223dd404895f7"
-  integrity sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==
-  dependencies:
-    "@cspotcode/source-map-support" "0.7.0"
-    "@tsconfig/node10" "^1.0.7"
-    "@tsconfig/node12" "^1.0.7"
-    "@tsconfig/node14" "^1.0.0"
-    "@tsconfig/node16" "^1.0.2"
-    acorn "^8.4.1"
-    acorn-walk "^8.1.1"
-    arg "^4.1.0"
-    create-require "^1.1.0"
-    diff "^4.0.1"
-    make-error "^1.1.1"
-    yn "3.1.1"
-
 ts-node@^10.7.0:
   version "10.7.0"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.7.0.tgz#35d503d0fab3e2baa672a0e94f4b40653c2463f5"
@@ -7712,11 +7629,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typescript@^4.4.3:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
-  integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
 
 typescript@^4.6.4:
   version "4.6.4"
