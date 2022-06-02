@@ -1679,7 +1679,7 @@
   optionalDependencies:
     fsevents "^2.3.2"
 
-"@wppconnect/frontend@^1.0.0":
+"@wppconnect/frontend@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.1.tgz#29251c199554a6b7c035581af886b7cb18a7090d"
   integrity sha512-80UsxtYMxsD435FcOXhtw2utyctNSoP4agQsgUhE4+McUdBd/tlIINFbUjwu8Pw3qSg0sYNpYYrJamMxSurzow==
