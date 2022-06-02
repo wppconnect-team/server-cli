@@ -20,7 +20,12 @@
       },
       {
         "matchManagers": ["github-actions"],
-        "semanticCommitType": "ci"
+        "semanticCommitType": "ci",
+        "labels": ["dependencies", "github_actions"]
+      },
+      {
+        "matchManagers": ["npm"],
+        "labels": ["dependencies", "javascript"]
       },
       {
         "matchDepTypes": ["devDependencies"],
