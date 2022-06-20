@@ -1561,13 +1561,13 @@
   dependencies:
     "@types/node" "*"
 
-"@wppconnect-team/wppconnect@^1.13.3":
-  version "1.13.3"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.13.3.tgz#66c116fd5b4f800fe298f310bbf11793755db195"
-  integrity sha512-HtXgjqv6mX3pmGOVLHm5yPnJaVmSShDi3tQpb/Ph10XyqB65lQQcl0Q5xfBqh+TI5D9sfy0g62FwWau+lY0LpQ==
+"@wppconnect-team/wppconnect@^1.14.4":
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.14.4.tgz#a8d069185a8f04a5eee2b15d011ea9fbfb60b21e"
+  integrity sha512-z9urgyzeHGYTl6S+5MElglykT4PpxZny5yZ85GXkpwh0lfqfvZav0glDLqxmZ3H9aDoi/rOcLt8jmnRbHFr3mw==
   dependencies:
-    "@wppconnect/wa-js" "^2.4.1"
-    "@wppconnect/wa-version" "^1.1.88"
+    "@wppconnect/wa-js" "^2.7.3"
+    "@wppconnect/wa-version" "^1.1.97"
     atob "^2.1.2"
     axios "^0.27.2"
     boxen "^5.1.2"
@@ -1594,7 +1594,7 @@
     tmp "^0.2.1"
     tree-kill "^1.2.2"
     winston "^3.7.2"
-    ws "^8.7.0"
+    ws "^8.8.0"
   optionalDependencies:
     fsevents "^2.3.2"
 
@@ -1603,36 +1603,36 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.1.tgz#29251c199554a6b7c035581af886b7cb18a7090d"
   integrity sha512-80UsxtYMxsD435FcOXhtw2utyctNSoP4agQsgUhE4+McUdBd/tlIINFbUjwu8Pw3qSg0sYNpYYrJamMxSurzow==
 
-"@wppconnect/server@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.3.3.tgz#50c6c5a698cc452023b9019f0908ab0cbf5e9a18"
-  integrity sha512-lN7wqkfIXgElkRiVbLEzXazVg4ZF80ewMm18IcPSSgTHeAwMDPARPudL9dP0t/LcMZ/Pd56prGyWbo60nQBxUA==
+"@wppconnect/server@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.3.4.tgz#a7edc023b83b3b48c1bfa01b2f65377e9d08aaa7"
+  integrity sha512-u89I9KdHWea6VeeLvLizD9EAcSZoLpW5Qnipt9LwvssSE+mKpEDPRRZLiBvD+JmENIrjCqt9prnisW1woPOcvw==
   dependencies:
-    "@wppconnect-team/wppconnect" "^1.13.3"
+    "@wppconnect-team/wppconnect" "^1.14.4"
     axios "^0.27.0"
     bcrypt "^5.0.1"
     buffer-to-stream "1.0.0"
     cors "^2.8.5"
-    dotenv "^16.0.0"
-    express "^4.17.1"
+    dotenv "^16.0.1"
+    express "^4.18.1"
     express-query-boolean "^2.0.0"
     form-data "^4.0.0"
     json-mapper-json "^1.3.3"
     merge-deep "^3.0.3"
-    moment "^2.29.1"
-    multer "^1.4.2"
-    socket.io "^4.1.2"
-    swagger-ui-express "^4.1.6"
+    moment "^2.29.3"
+    multer "^1.4.4"
+    socket.io "^4.5.1"
+    swagger-ui-express "^4.4.0"
 
-"@wppconnect/wa-js@^2.4.1":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.5.0.tgz#980e5391a93ff26c1de452488356d63d5b8e1f44"
-  integrity sha512-9m54Lf1uGC+crHNyjrkkVx5xlSWu/5Z1W4EszmiQvPAJnRw0wLtMdqBhxMYdq1CWzBCnGk1CmxDSkcaPwQz5HQ==
+"@wppconnect/wa-js@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.7.3.tgz#e63903beb610d3c18ae204bd0c05c5b004aea277"
+  integrity sha512-7heyUngPO/GbzePTCRza2JMDSz/YC3dnokzrp9dQJpHOAa2a6nwgiro4ogPIrc+ddBflrQCv5kgeCySe2zmdXQ==
 
-"@wppconnect/wa-version@^1.1.88":
-  version "1.1.90"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.90.tgz#fbb9aec0cc9620169db971aa28d663a82a29332a"
-  integrity sha512-q+6fMyS+pMDnXgACBNQhQER5XuaD43duKMYAgS4fQIdPplclEJ4oKbenv5aY39jw5LQvgr41iR8bM+jLLzW2Lg==
+"@wppconnect/wa-version@^1.1.97":
+  version "1.1.97"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.97.tgz#e94e2093d3feba755dac3e977efe944789bd0c4e"
+  integrity sha512-HIE0bQjPr08yiQdLaNzqWAFgcd95+j/6GZG/j1JQA+L+kvySg8c3OrLBv70/rncDO5FP5GqSWE5PxuRppJkciQ==
   dependencies:
     node-fetch "^2.6.7"
     semver "^7.3.7"
@@ -3006,7 +3006,7 @@ dot-prop@^5.1.0, dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@^16.0.0:
+dotenv@^16.0.1:
   version "16.0.1"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.1.tgz#8f8f9d94876c35dac989876a5d3a82a267fdce1d"
   integrity sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==
@@ -3376,7 +3376,7 @@ express-query-boolean@^2.0.0:
   resolved "https://registry.yarnpkg.com/express-query-boolean/-/express-query-boolean-2.0.0.tgz#ea56ac8138e2b95b171b8eee2af88738302941c3"
   integrity sha512-4dU/1HPm8lkTPR12+HFUXqCarcsC19OKOkb4otLOuADfPYrQMaugPJkSmxNsqwmWYjozvT6vdTiqkgeBHkzOow==
 
-express@^4.17.1:
+express@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.18.1.tgz#7797de8b9c72c857b9cd0e14a5eea80666267caf"
   integrity sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q==
@@ -5208,7 +5208,7 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-moment@^2.29.1:
+moment@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
   integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
@@ -5233,7 +5233,7 @@ ms@2.1.3, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-multer@^1.4.2:
+multer@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/multer/-/multer-1.4.4.tgz#e2bc6cac0df57a8832b858d7418ccaa8ebaf7d8c"
   integrity sha512-2wY2+xD4udX612aMqMcB8Ws2Voq6NIUPEtD1be6m411T4uDH/VtL9i//xvcyFlTVfRdaBsk7hV5tgrGQqhuBiw==
@@ -6678,7 +6678,7 @@ socket.io-parser@~4.0.4:
     component-emitter "~1.3.0"
     debug "~4.3.1"
 
-socket.io@^4.1.2:
+socket.io@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-4.5.1.tgz#aa7e73f8a6ce20ee3c54b2446d321bbb6b1a9029"
   integrity sha512-0y9pnIso5a9i+lJmsCdtmTTgJFFSvNQKDnPQRz28mGNnxbmqYg2QPtJTLFxhymFZhAIn50eHAKzJeiNaKr+yUQ==
@@ -6966,7 +6966,7 @@ swagger-ui-dist@>=4.11.0:
   resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.12.0.tgz#986d90f05e81fb9db3ca40372278a5d8ce71db3a"
   integrity sha512-B0Iy2ueXtbByE6OOyHTi3lFQkpPi/L7kFOKFeKTr44za7dJIELa9kzaca6GkndCgpK1QTjArnoXG+aUy0XQp1w==
 
-swagger-ui-express@^4.1.6:
+swagger-ui-express@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.4.0.tgz#4c50c51a092075588f173b2c3a5c830f07b6b44e"
   integrity sha512-1CzRkHG386VQMVZK406jcpgnW2a9A5A/NiAjKhsFTQqUBWRF+uGbXTU/mA7WSV3mTzyOQDvjBdWP/c2qd5lqKw==
@@ -7556,10 +7556,15 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@8.7.0, ws@^8.7.0:
+ws@8.7.0:
   version "8.7.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.7.0.tgz#eaf9d874b433aa00c0e0d8752532444875db3957"
   integrity sha512-c2gsP0PRwcLFzUiA8Mkr37/MI7ilIlHQxaEAtd0uNMbVMoy8puJyafRlm0bV9MbGSabUPeLrRRaqIBcFcA2Pqg==
+
+ws@^8.8.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
+  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
 
 ws@~8.2.3:
   version "8.2.3"
