@@ -1598,10 +1598,10 @@
   optionalDependencies:
     fsevents "^2.3.2"
 
-"@wppconnect/frontend@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.1.tgz#29251c199554a6b7c035581af886b7cb18a7090d"
-  integrity sha512-80UsxtYMxsD435FcOXhtw2utyctNSoP4agQsgUhE4+McUdBd/tlIINFbUjwu8Pw3qSg0sYNpYYrJamMxSurzow==
+"@wppconnect/frontend@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
+  integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
 "@wppconnect/server@^1.3.4":
   version "1.3.4"
