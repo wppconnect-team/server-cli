@@ -1815,10 +1815,10 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.4.0.tgz#7a191dfe681cfe2bbb5f0fb9b5c7c4c88359fb82"
-  integrity sha512-Eut3dQa387etNnCAIihkvS9dri+zFz1J7zdOadUCI9kxQm9GjNldxr/ePh6nbsWJXVmfZucyFj7RcvRTRvsIXA==
+"@wppconnect/server@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.5.0.tgz#e60fd110943e4d28c4cf310c8858823fe1762f98"
+  integrity sha512-W7pYP7ALsGax5RUupVSuwk21S0aMc9FJirgo6a1K6/NCvnJr89OUVwB+qwXvW62PrASEBBy4ILkv7/HHyVEkug==
   dependencies:
     "@wppconnect-team/wppconnect" "^1.14.4"
     axios "^0.27.0"
@@ -1831,7 +1831,7 @@
     form-data "^4.0.0"
     json-mapper-json "^1.3.3"
     merge-deep "^3.0.3"
-    moment "^2.29.3"
+    moment "^2.29.4"
     multer "^1.4.4"
     socket.io "^4.5.1"
     swagger-ui-express "^4.4.0"
@@ -5466,10 +5466,10 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-moment@^2.29.3:
-  version "2.29.3"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
-  integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 mri@^1.1.5:
   version "1.2.0"
