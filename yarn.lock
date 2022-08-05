@@ -1845,13 +1845,13 @@
   dependencies:
     "@types/node" "*"
 
-"@wppconnect-team/wppconnect@^1.15.0":
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.15.0.tgz#a2dc055d03b39b488ed12fee95d8878c49509fcf"
-  integrity sha512-49nQiur/VrajzA7ax+0MXbKllpSF2O1xzO2N7+y+fVvQDzvmtjXgKC6/SPSiuDt2dc9+fqP3Onx44I19v3dVCQ==
+"@wppconnect-team/wppconnect@^1.16.0":
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.16.0.tgz#cfbf81414447410de83350a4b49f6771a2f32811"
+  integrity sha512-h6Ixqa2nW6zq2FLZBj7LJOJEj8OrrKnF6QdrKixoj9VF2iHUXBfV7NHoVRe5zA88F21UM1uv2jyZ1dnxkH557w==
   dependencies:
-    "@wppconnect/wa-js" "^2.8.1"
-    "@wppconnect/wa-version" "^1.1.104"
+    "@wppconnect/wa-js" "^2.10.0"
+    "@wppconnect/wa-version" "^1.1.122"
     atob "^2.1.2"
     axios "^0.27.2"
     boxen "^5.1.2"
@@ -1859,7 +1859,7 @@
     chalk "~4.1.2"
     chrome-launcher "^0.15.1"
     execa "^5.1.1"
-    file-type "~16.5.3"
+    file-type "~16.5.4"
     futoin-hkdf "^1.5.1"
     latest-version "^5.1.0"
     logform "^2.4.2"
@@ -1887,12 +1887,12 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.6.0.tgz#b32e4310a0dfbfe8a1b1d1c04866c03663745186"
-  integrity sha512-aHSmwWtahxc6lUAV7V/FokD+C94BC93or2QKSsQ+kDNL/fJY+RA7syQYekq9u+p3WdYZqoyq4c0yc4wPF1whwQ==
+"@wppconnect/server@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.6.1.tgz#c1171118d241ee8e97863fd5ac6186c01f311843"
+  integrity sha512-eBv2ZXr4Eqdw9GM7KC2oYRaWfOxwnrPJYub8T3JVx+9pB5IhesbLfnTxfYPPAWoSRZg6q2o7PkTnu15ON2IfZg==
   dependencies:
-    "@wppconnect-team/wppconnect" "^1.15.0"
+    "@wppconnect-team/wppconnect" "^1.16.0"
     axios "^0.27.0"
     bcrypt "^5.0.1"
     buffer-to-stream "1.0.0"
@@ -1909,15 +1909,15 @@
     swagger-ui-express "^4.5.0"
     winston "^3.8.1"
 
-"@wppconnect/wa-js@^2.8.1":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.8.2.tgz#b8792b5623145fdfaa2f51cbbbd44c2946a12902"
-  integrity sha512-9+bzSpk3c+PUMnrf1CS6RfgRx4YczkIdxxwOogi1VFhmBu+ajm5WqDWiri+McxMyIIrXOiN9vAh1pGfJxQ4LfA==
+"@wppconnect/wa-js@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.10.0.tgz#6c41f11de062ab588702cfa2bf384b5524370f06"
+  integrity sha512-P5+dJ5z7fmmqInLZlvw2uVSI9+c/E66QDejD+v/6Nd59laE0MQPpqOm0Wqnxg5lDhKMUfziFRGAnpo44lL0g2A==
 
-"@wppconnect/wa-version@^1.1.104":
-  version "1.1.109"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.109.tgz#54fef30d3cfe981f53c175e6610c1499adbef400"
-  integrity sha512-MkXbiLot+2jldPRGmVt4WfR/mf1sowi4WOlMtHR3eArCygDYswqOPdnMHZ/Eg2wumDUF3/htKykvYQlQOoDE9A==
+"@wppconnect/wa-version@^1.1.122":
+  version "1.1.122"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.122.tgz#bf9c7f2be188c1242bce4fc4e32fff7b40c9c0e6"
+  integrity sha512-Ohbt4c0kC9GWp8ZpAhCMTYj4NgL4dB3x8m+cQb9YI1NeAwGt6D0LG/NIrhUPKvaF2GsmX8+gO9vnC8xfZIWsKA==
   dependencies:
     node-fetch "^2.6.7"
     semver "^7.3.7"
@@ -3926,10 +3926,10 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-type@~16.5.3:
-  version "16.5.3"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-16.5.3.tgz#474b7e88c74724046abb505e9b8ed4db30c4fc06"
-  integrity sha512-uVsl7iFhHSOY4bEONLlTK47iAHtNsFHWP5YE4xJfZ4rnX7S1Q3wce09XgqSC7E/xh8Ncv/be1lNoyprlUH/x6A==
+file-type@~16.5.4:
+  version "16.5.4"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-16.5.4.tgz#474fb4f704bee427681f98dd390058a172a6c2fd"
+  integrity sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==
   dependencies:
     readable-web-to-node-stream "^3.0.0"
     strtok3 "^6.2.4"
