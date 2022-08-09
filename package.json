@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@wppconnect/server": "^1.6.1",
+    "@wppconnect/server": "^1.6.2",
     "commander": "^9.4.0",
     "merge-deep": "^3.0.3"
   },

@@ -1845,13 +1845,13 @@
   dependencies:
     "@types/node" "*"
 
-"@wppconnect-team/wppconnect@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.16.0.tgz#cfbf81414447410de83350a4b49f6771a2f32811"
-  integrity sha512-h6Ixqa2nW6zq2FLZBj7LJOJEj8OrrKnF6QdrKixoj9VF2iHUXBfV7NHoVRe5zA88F21UM1uv2jyZ1dnxkH557w==
+"@wppconnect-team/wppconnect@^1.16.1":
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-1.16.1.tgz#29743f8cf64f440f9a23063ff9b1ab700412dd24"
+  integrity sha512-w7Ij79iDfGihDXazAkwR3XiutNO8cET+HpyRtnVKBCNgqJOlQya0gAtRPbGDpYJQtJ8Xd2ZgUIYs9rMBVwiGTw==
   dependencies:
-    "@wppconnect/wa-js" "^2.10.0"
-    "@wppconnect/wa-version" "^1.1.122"
+    "@wppconnect/wa-js" "^2.10.1"
+    "@wppconnect/wa-version" "^1.1.123"
     atob "^2.1.2"
     axios "^0.27.2"
     boxen "^5.1.2"
@@ -1887,12 +1887,12 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.6.1.tgz#c1171118d241ee8e97863fd5ac6186c01f311843"
-  integrity sha512-eBv2ZXr4Eqdw9GM7KC2oYRaWfOxwnrPJYub8T3JVx+9pB5IhesbLfnTxfYPPAWoSRZg6q2o7PkTnu15ON2IfZg==
+"@wppconnect/server@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.6.2.tgz#44b1c74dc90c0db151bf8f10dcd45ffe0ccc36ba"
+  integrity sha512-Q6eZfEbHGEIv/WuJJmCk87KCNLZ50P4Qb2J9cerEEYk1eQEXqmbp/hXQoTJNTExd6yXbGnKw/O6MqMmEgTTrOQ==
   dependencies:
-    "@wppconnect-team/wppconnect" "^1.16.0"
+    "@wppconnect-team/wppconnect" "^1.16.1"
     axios "^0.27.0"
     bcrypt "^5.0.1"
     buffer-to-stream "1.0.0"
@@ -1909,15 +1909,15 @@
     swagger-ui-express "^4.5.0"
     winston "^3.8.1"
 
-"@wppconnect/wa-js@^2.10.0":
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.10.0.tgz#6c41f11de062ab588702cfa2bf384b5524370f06"
-  integrity sha512-P5+dJ5z7fmmqInLZlvw2uVSI9+c/E66QDejD+v/6Nd59laE0MQPpqOm0Wqnxg5lDhKMUfziFRGAnpo44lL0g2A==
+"@wppconnect/wa-js@^2.10.1":
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-js/-/wa-js-2.10.1.tgz#1dedabad8ef8653fbb23bea1c5375062114934d5"
+  integrity sha512-IpSS5mozLSgLUqp18nlAdoL+jaIP6lD6SPwQuOw603k+Hl7E+3X12RGr12Wv6/q6vEpfrUFbLktgZchV/fwdiA==
 
-"@wppconnect/wa-version@^1.1.122":
-  version "1.1.122"
-  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.122.tgz#bf9c7f2be188c1242bce4fc4e32fff7b40c9c0e6"
-  integrity sha512-Ohbt4c0kC9GWp8ZpAhCMTYj4NgL4dB3x8m+cQb9YI1NeAwGt6D0LG/NIrhUPKvaF2GsmX8+gO9vnC8xfZIWsKA==
+"@wppconnect/wa-version@^1.1.123":
+  version "1.1.124"
+  resolved "https://registry.yarnpkg.com/@wppconnect/wa-version/-/wa-version-1.1.124.tgz#255de85d21bcf371f90245d75ea49ff362a296b8"
+  integrity sha512-YQvx7YVYAIQem+yvT8m0oMB31E22Y8e32/2+KJGKQbifdChoiTJp4DcyYsXNgpWu9nW86/CNWU6zhYl5RPHWtA==
   dependencies:
     node-fetch "^2.6.7"
     semver "^7.3.7"
