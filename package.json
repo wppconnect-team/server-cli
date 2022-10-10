@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@wppconnect/server": "^1.6.2",
     "commander": "^9.4.1",
     "merge-deep": "^3.0.3"
@@ -40,7 +40,7 @@
     "@babel/eslint-plugin": "^7.19.1",
     "@babel/node": "^7.19.1",
     "@babel/plugin-transform-runtime": "^7.19.1",
-    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@commitlint/cz-commitlint": "^17.1.2",
