@@ -43,6 +43,11 @@
         "automerge": true,
         "automergeStrategy": "squash",
         "automergeType": "pr"
+      },
+      {
+        "description": "Ignore major version",
+        "matchPackageNames": ["node"],
+        "allowedVersions": "<17"
       }
     ]
   }
