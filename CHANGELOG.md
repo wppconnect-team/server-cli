@@ -1,3 +1,12 @@
+## 1.3.5 (2022-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @wppconnect/server to ^1.7.2 ([#342](https://github.com/wppconnect-team/server-cli/issues/342)) ([ac82cce](https://github.com/wppconnect-team/server-cli/commit/ac82cce8675ae87f1bcff63fba095f97dc5c1264))
+
+
+
 ## 1.3.4 (2022-11-03)
 
 
