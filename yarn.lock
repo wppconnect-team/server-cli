@@ -2105,10 +2105,10 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.0.tgz#954a19010b733c4b3d53fe20a95bd1b873adb520"
-  integrity sha512-PLwYzGWqF+F/H1/HtDC108VI6taCb0twdh0GgOlvtzZGTUezor05ooByf2nH4wBKAX1UdBPF/QU0WoicXUI4Fw==
+"@wppconnect/server@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.1.tgz#8f7d374a94f30002d3b08e3a9ed60fb79b939396"
+  integrity sha512-s6PjrS7uVsmAPb1xJ6skwBbmXYQGuCe1BDzEnQLAYSyie0CUm4uzt9Fe6MxGun8SatYDq8NxMIF5bTiGcdyZmw==
   dependencies:
     "@wppconnect-team/wppconnect" "^1.20.0"
     axios "^1.2.1"
