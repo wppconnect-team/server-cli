@@ -2128,13 +2128,13 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.1.tgz#8f7d374a94f30002d3b08e3a9ed60fb79b939396"
-  integrity sha512-s6PjrS7uVsmAPb1xJ6skwBbmXYQGuCe1BDzEnQLAYSyie0CUm4uzt9Fe6MxGun8SatYDq8NxMIF5bTiGcdyZmw==
+"@wppconnect/server@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.2.tgz#3bfbf2b66809d4bb0d73c1adb5707e2ee947ae89"
+  integrity sha512-CWKr0JlGv8HZj3RJpL+9VIPAZ3xuD3xTsit9adUwZDzNXORQgK8jH82gIPDxQDLrp43pniANS6etbB5HrMQIKw==
   dependencies:
     "@wppconnect-team/wppconnect" "^1.20.0"
-    axios "^1.2.1"
+    axios "^1.2.2"
     bcrypt "^5.1.0"
     buffer-to-stream "1.0.0"
     cors "^2.8.5"
@@ -2433,6 +2433,15 @@ axios@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.1.tgz#44cf04a3c9f0c2252ebd85975361c026cb9f864a"
   integrity sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
+axios@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.2.tgz#72681724c6e6a43a9fea860fc558127dbe32f9f1"
+  integrity sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
