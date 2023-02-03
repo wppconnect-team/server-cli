@@ -1603,13 +1603,13 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@^1.8.2":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.2.tgz#3bfbf2b66809d4bb0d73c1adb5707e2ee947ae89"
-  integrity sha512-CWKr0JlGv8HZj3RJpL+9VIPAZ3xuD3xTsit9adUwZDzNXORQgK8jH82gIPDxQDLrp43pniANS6etbB5HrMQIKw==
+"@wppconnect/server@^1.8.3":
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-1.8.3.tgz#f213bb157b65a6b0c572d7044de7dc67625dccd3"
+  integrity sha512-p/tV4F2lgL/dcasxw33QuVPht9XiLv/JH2wrAlFnoGXXvHVlaP6WuoS6lki8UQ4/pUWdY6tTH4q5eyZfIoI1vw==
   dependencies:
     "@wppconnect-team/wppconnect" "^1.20.0"
-    axios "^1.2.2"
+    axios "^1.3.1"
     bcrypt "^5.1.0"
     buffer-to-stream "1.0.0"
     cors "^2.8.5"
@@ -1894,10 +1894,19 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-axios@^1.2.1, axios@^1.2.2:
+axios@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.3.tgz#31a3d824c0ebf754a004b585e5f04a5f87e6c4ff"
   integrity sha512-pdDkMYJeuXLZ6Xj/Q5J3Phpe+jbGdsSzlQaFVkMQzRUL05+6+tetX8TV3p4HrU4kzuO9bt+io/yGQxuyxA/xcw==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
+axios@^1.3.1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.2.tgz#7ac517f0fa3ec46e0e636223fd973713a09c72b3"
+  integrity sha512-1M3O703bYqYuPhbHeya5bnhpYVsDDRyQSabNja04mZtboLNSuZ4YrltestrLXfHgmzua4TpUqRiVKbiQuo2epw==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
