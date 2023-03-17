@@ -1,3 +1,12 @@
+## 1.3.7 (2023-03-17)
+
+
+### Bug Fixes
+
+* Fixed config file argument (fix [#105](https://github.com/wppconnect-team/server-cli/issues/105)) ([64b2ffd](https://github.com/wppconnect-team/server-cli/commit/64b2ffdbc52bb193a3ded633c273c8bcc2d9efc0))
+
+
+
 ## 1.3.6 (2023-03-13)
 
 
