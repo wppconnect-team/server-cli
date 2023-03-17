@@ -21,11 +21,11 @@ program.version(packageJSON.version);
 
 //#region frontend
 program.option('--frontend', 'Habilita o frontend');
-program.option('--frontend-path', 'Caminho dos arquivos de frontend (pasta dist)');
+program.option('--frontend-path <path>', 'Caminho dos arquivos de frontend (pasta dist)');
 //#endregion
 
 //#region comum
-program.option('-c, --config', 'Arquivo JSON de configuração para inicialização');
+program.option('-c, --config <path>', 'Arquivo JSON de configuração para inicialização');
 
 // Host
 program.option('-h, --host <host>', 'Host de execução');
