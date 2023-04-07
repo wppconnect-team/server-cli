@@ -48,7 +48,7 @@
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
