@@ -50,7 +50,7 @@
     "mongoose": "^7.3.0",
     "redis": "^4.6.7",
     "commitizen": "^4.3.0",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^3.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
