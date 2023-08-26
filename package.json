@@ -47,7 +47,7 @@
     "@wppconnect/frontend": "^1.0.3",
     "aws-sdk": "^2.1440.0",
     "crypto-js": "^4.1.1",
-    "mongoose": "^7.4.4",
+    "mongoose": "^7.4.5",
     "redis": "^4.6.8",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^3.0.0",
@@ -66,7 +66,7 @@
   "peerDependencies": {
     "aws-sdk": "^2.1440.0",
     "crypto-js": "^4.1.1",
-    "mongoose": "^7.4.4",
+    "mongoose": "^7.4.5",
     "redis": "^4.6.8"
   }
 }
