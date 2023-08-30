@@ -54,7 +54,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
     "license-check-and-add": "^4.0.5",
     "nodemon": "^3.0.1",
