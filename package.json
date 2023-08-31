@@ -50,6 +50,7 @@
     "mongoose": "^7.4.5",
     "redis": "^4.6.8",
     "commitizen": "^4.3.0",
+    "prom-client": "^14.2.0",
     "conventional-changelog-cli": "^3.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.48.0",
