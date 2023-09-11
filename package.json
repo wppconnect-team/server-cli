@@ -48,7 +48,7 @@
     "@commitlint/cz-commitlint": "^17.7.1",
     "@wppconnect/frontend": "^1.0.3",
     "commitizen": "^4.3.0",
-    "conventional-changelog-cli": "^4.0.0",
+    "conventional-changelog-cli": "^4.1.0",
     "cross-env": "^7.0.3",
     "crypto-js": "^4.1.1",
     "eslint": "^8.48.0",
