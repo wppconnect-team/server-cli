@@ -65,7 +65,7 @@
     "rimraf": "^5.0.5"
   },
   "peerDependencies": {
-    "aws-sdk": "^2.1510.0",
+    "aws-sdk": "^2.1515.0",
     "crypto-js": "^4.2.0",
     "mongoose": "^7.6.6",
     "redis": "^4.6.11"
