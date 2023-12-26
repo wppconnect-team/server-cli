@@ -35,7 +35,7 @@
     "prom-client": "^15.1.0"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.478.0",
+    "@aws-sdk/client-s3": "^3.481.0",
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.6",
     "@babel/eslint-parser": "^7.23.3",
