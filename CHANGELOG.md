@@ -1,3 +1,12 @@
+## 1.3.10 (2024-01-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @wppconnect/server to ^2.4.0 ([#572](https://github.com/wppconnect-team/server-cli/issues/572)) ([584e084](https://github.com/wppconnect-team/server-cli/commit/584e0846c2fb13782647afa057a196f3752de366))
+
+
+
 ## 1.3.9 (2024-01-26)
 
 
