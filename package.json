@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@wppconnect/server": "^2.4.0",
     "commander": "^11.1.0",
     "merge-deep": "^3.0.3",
@@ -36,13 +36,13 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.490.0",
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.7",
-    "@babel/eslint-parser": "^7.23.3",
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/eslint-parser": "^7.23.9",
     "@babel/eslint-plugin": "^7.23.5",
-    "@babel/node": "^7.22.19",
-    "@babel/plugin-transform-runtime": "^7.23.7",
-    "@babel/preset-env": "^7.23.8",
+    "@babel/node": "^7.23.9",
+    "@babel/plugin-transform-runtime": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "@commitlint/cz-commitlint": "^18.4.4",
