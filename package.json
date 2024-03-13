@@ -30,7 +30,7 @@
   "dependencies": {
     "@babel/runtime": "^7.24.0",
     "@wppconnect/server": "^2.4.1",
-    "commander": "^11.1.0",
+    "commander": "^12.0.0",
     "merge-deep": "^3.0.3",
     "prom-client": "^15.1.0"
   },
