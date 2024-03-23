@@ -2,9 +2,9 @@ FROM node:18-alpine as base
 WORKDIR /usr/src/server-cli
 ENV NODE_ENV=production PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 COPY package.json yarn.lock ./
-RUN yarn install --production --pure-lockfile && \
-    yarn add sharp --ignore-engines && \
-    yarn cache clean
+RUN yarn install --production --pure-lockfile
+RUN yarn add sharp --ignore-engines
+RUN yarn cache clean
 
 FROM base as build
 WORKDIR /usr/src/server-cli
