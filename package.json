@@ -1,6 +1,6 @@
 {
   "name": "@wppconnect/server-cli",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "description": "Servidor de WPPConnect com frontend para ser executado a partir de uma linha de comando",
   "bin": {
     "wppserver": "./bin/wppserver.js"
