@@ -59,7 +59,7 @@
     "mongoose": "^8.2.3",
     "nodemon": "^3.1.0",
     "prettier": "^2.8.8",
-    "pretty-quick": "^3.3.1",
+    "pretty-quick": "^4.0.0",
     "redis": "^4.6.13",
     "release-it": "^17.1.1",
     "rimraf": "^5.0.5"
