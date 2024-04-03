@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.18 as base
+FROM node:lts-alpine3.19 as base
 WORKDIR /usr/src/wpp-server
 ENV NODE_ENV=production PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 COPY package.json ./
@@ -32,4 +32,4 @@ RUN yarn cache clean
 COPY . .
 COPY --from=build /usr/src/wpp-server/ /usr/src/wpp-server/
 EXPOSE 21465
-ENTRYPOINT ["node", "dist/server.js"]
+ENTRYPOINT ["node", "bin/wppserver.js"]
