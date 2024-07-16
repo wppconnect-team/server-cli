@@ -37,7 +37,7 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.614.0",
     "@babel/cli": "^7.24.8",
-    "@babel/core": "^7.24.8",
+    "@babel/core": "^7.24.9",
     "@babel/eslint-parser": "^7.24.8",
     "@babel/eslint-plugin": "^7.24.7",
     "@babel/node": "^7.24.8",
