@@ -57,7 +57,7 @@
     "husky": "^9.1.6",
     "license-check-and-add": "^4.0.5",
     "mongoose": "^8.5.1",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.7",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.3.1",
     "redis": "^4.6.15",
