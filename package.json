@@ -61,7 +61,7 @@
     "prettier": "^2.8.8",
     "pretty-quick": "^3.3.1",
     "redis": "^4.7.0",
-    "release-it": "^17.6.0",
+    "release-it": "^17.9.0",
     "rimraf": "^5.0.10"
   },
   "peerDependencies": {
