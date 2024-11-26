@@ -54,7 +54,7 @@
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^9.1.6",
+    "husky": "^9.1.7",
     "license-check-and-add": "^4.0.5",
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7",
