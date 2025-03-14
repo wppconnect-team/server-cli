@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 18.20.7
 
       - name: Get yarn cache directory
         id: yarn-cache
@@ -48,7 +48,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 18.20.7
 
       - name: Get yarn cache directory
         id: yarn-cache
