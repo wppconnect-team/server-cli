@@ -49,7 +49,7 @@
     "@wppconnect/frontend": "^1.0.3",
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.1.0",
     "crypto-js": "^4.2.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
