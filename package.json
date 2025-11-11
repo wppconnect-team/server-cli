@@ -67,7 +67,7 @@
   },
   "peerDependencies": {
     "aws-sdk": "^2.1692.0",
-    "@img/sharp-win32-x64": "^0.34.5",
+    "@img/sharp-win32-x64": "^0.34.3",
     "crypto-js": "^4.2.0",
     "mongoose": "^8.19.3",
     "redis": "^4.7.1"
