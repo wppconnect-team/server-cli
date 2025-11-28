@@ -1,53 +1,49 @@
-FROM node:22.19.0-alpine AS base
+FROM node:22.21.1-alpine AS base
 WORKDIR /usr/src/wpp-server
-ENV NODE_ENV=production PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-COPY package.json ./
-
+# Install build dependencies and runtime libraries for sharp
 RUN apk update && \
     apk add --no-cache \
+    vips \
     vips-dev \
     fftw-dev \
     gcc \
     g++ \
     make \
     libc6-compat \
-    build-base \
-    python3 \
     pkgconfig \
+    python3 \
     && rm -rf /var/cache/apk/*
 
-RUN yarn install --production --pure-lockfile && \
-    yarn add sharp --ignore-engines && \
-    yarn cache clean
+# To make sure yarn 4 uses node-modules linker
+COPY .yarnrc.yml ./
 
-FROM base as build
-WORKDIR /usr/src/wpp-server
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-
+# Copy only package.json to leverage Docker cache
 COPY package.json ./
-RUN yarn install --production=false --pure-lockfile && \
-    yarn cache clean
+COPY yarn.lock ./
 
+# Enable corepack and prepare yarn 4.12.0
+RUN corepack enable && \
+    corepack prepare yarn@4.12.0 --activate
+
+# Install dependencies with immutable lockfile
+RUN yarn install --immutable
+
+FROM base AS build
+WORKDIR /usr/src/wpp-server
 COPY . .
+RUN yarn install
 RUN yarn build
 
-FROM node:22.19.0-alpine
+FROM build AS runtime
 WORKDIR /usr/src/wpp-server/
 
-# CORREÇÃO: Instalar vips e suas dependências no stage final
+# Install runtime dependencies (chromium and vips libraries)
 RUN apk add --no-cache \
     chromium \
     vips \
-    vips-cpp \
-    && rm -rf /var/cache/apk/*
-
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
-RUN yarn cache clean
-
-COPY --from=build /usr/src/wpp-server/ /usr/src/wpp-server/
+    fftw
 
 EXPOSE 21465
 
