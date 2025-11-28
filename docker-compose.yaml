@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  wppconnect:
+    build:
+      dockerfile: Dockerfile
+    image: wppconnect/server-cli:latest
+    container_name: wppconnect
+    command: 
+      - --log-level
+      - DEBUG
+      - --secretKey
+      - My53cr3tKY
+      - --port
+      - "21465"
+      - --startAllSession
+      - --webhook-allUnreadOnStart
+      - --no-webhook-onPresenceChanged
+      - --no-webhook-onParticipantsChanged
+      - --no-webhook-listenAcks
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+      - wppconnect-cli
+    ports:
+      - "21465:21465"
+
+    volumes:
+      - wpp_tokens:/usr/src/wpp-server/tokens
+      - wpp_userDataDir:/usr/src/wpp-server/userDataDir
+
+
+volumes:
+  wpp_tokens:
+  wpp_userDataDir:
+
+networks:
+  wppconnect-cli:
+    external: true
