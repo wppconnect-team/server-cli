@@ -1442,7 +1442,7 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.6.0.tgz#ec6cd237440700bc23ca23087f513c75508958b0"
   integrity sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==
 
-"@commitlint/cli@^20.1.0":
+"@commitlint/cli@^20.2.0":
   version "20.2.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-20.2.0.tgz#4164499d3848447aacd795d298c8a768fb13a80c"
   integrity sha512-l37HkrPZ2DZy26rKiTUvdq/LZtlMcxz+PeLv9dzK9NzoFGuJdOQyYU7IEkEQj0pO++uYue89wzOpZ0hcTtoqUA==
@@ -1455,7 +1455,7 @@
     tinyexec "^1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^20.0.0":
+"@commitlint/config-conventional@^20.2.0":
   version "20.2.0"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-20.2.0.tgz#3c53c9d2939a0cc5ef8ef1f2c682eab2484e860e"
   integrity sha512-MsRac+yNIbTB4Q/psstKK4/ciVzACHicSwz+04Sxve+4DW+PiJeTjU0JnS4m/oOnulrXYN+yBPlKaBSGemRfgQ==
@@ -1471,7 +1471,7 @@
     "@commitlint/types" "^20.2.0"
     ajv "^8.11.0"
 
-"@commitlint/cz-commitlint@^20.1.0":
+"@commitlint/cz-commitlint@^20.2.0":
   version "20.2.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-20.2.0.tgz#5b61cec6766efeb47ce04a8911596eb1bb33e55c"
   integrity sha512-xHMmmBrKGwPPPQQS7xFYefoddB1jywTG3s6UBXQc6tRqjnAaSh2hXOyhZUhusxR16q9gqb5gxt2IAGAavfNJqA==
