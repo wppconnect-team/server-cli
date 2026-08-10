@@ -5,6 +5,9 @@ on:
     branches:
       - 'main'
 
+permissions:
+  contents: write
+
 jobs:
   update-lock:
     runs-on: ubuntu-latest
@@ -20,7 +23,7 @@ jobs:
       - name: Get yarn cache directory
         id: yarn-cache
         run: |
-          echo "::set-output name=dir::$(yarn cache dir)"
+          echo "dir=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
 
       - name: Setup yarn cache
         uses: actions/cache@v4
