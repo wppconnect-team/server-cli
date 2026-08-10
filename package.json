@@ -72,5 +72,11 @@
     "mongoose": "^9.7.4",
     "redis": "^5.12.1"
   },
+  "resolutions": {
+    "basic-ftp": "5.2.1",
+    "fast-xml-parser": "5.3.5",
+    "handlebars": "4.7.9",
+    "tar": "7.5.22"
+  },
   "packageManager": "yarn@1.22.22"
 }
