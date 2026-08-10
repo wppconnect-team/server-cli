@@ -62,12 +62,12 @@
     "pretty-quick": "^3.3.1",
     "redis": "^5.12.1",
     "release-it": "^17.11.0",
-    "sharp": "0.35.3",
-    "rimraf": "^5.0.10"
+    "rimraf": "^5.0.10",
+    "sharp": "0.35.3"
   },
   "peerDependencies": {
-    "aws-sdk": "^2.1693.0",
     "@img/sharp-win32-x64": "^0.35.3",
+    "aws-sdk": "^2.1693.0",
     "crypto-js": "^4.2.0",
     "mongoose": "^9.7.4",
     "redis": "^5.12.1"
@@ -76,7 +76,28 @@
     "basic-ftp": "5.3.1",
     "fast-xml-parser": "5.7.0",
     "handlebars": "4.7.9",
-    "tar": "7.5.22"
+    "@wppconnect/server/**/body-parser": "1.20.6",
+    "@wppconnect/server/**/brace-expansion": "1.1.18",
+    "@wppconnect/server/**/engine.io": "6.6.9",
+    "@wppconnect/server/**/form-data": "4.0.6",
+    "@wppconnect/server/**/multer": "2.2.0",
+    "@wppconnect/server/**/path-to-regexp": "0.1.13",
+    "@wppconnect/server/**/qs": "6.15.2",
+    "@wppconnect/server/**/tmp": "0.2.7",
+    "@wppconnect/server/**/ws": "8.21.3",
+    "**/package-json/got": "11.8.6",
+    "**/sharp": "0.35.3",
+    "@wppconnect-team/wppconnect/**/ws": "8.21.3",
+    "@types/minimatch/**/minimatch": "10.2.5",
+    "archiver-utils/**/minimatch": "9.0.7",
+    "nodemon/**/brace-expansion": "5.0.9",
+    "nodemon/**/minimatch": "10.2.5",
+    "pretty-quick/**/picomatch": "3.0.2",
+    "readdir-glob/**/minimatch": "5.1.8",
+    "rimraf/**/minimatch": "9.0.7",
+    "**/lodash": "4.18.1",
+    "tar": "7.5.22",
+    "tmp": "0.2.7"
   },
   "packageManager": "yarn@1.22.22"
 }
