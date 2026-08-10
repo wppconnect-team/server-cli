@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -28,7 +31,7 @@ jobs:
       - name: Get yarn cache directory
         id: yarn-cache
         run: |
-          echo "::set-output name=dir::$(yarn cache dir)"
+          echo "dir=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
 
       - name: Setup yarn cache
         uses: actions/cache@v4
@@ -58,8 +61,7 @@ jobs:
           changelog=$(npm run changelog:last --silent)
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}" 
-          echo -e "set-output name=changelog::${changelog-<empty>}\n"
-          echo -e "::set-output name=changelog::${changelog}\n"
+          echo "changelog=${changelog-<empty>}" >> "$GITHUB_OUTPUT"
 
       - name: Create Release
         id: create_release
