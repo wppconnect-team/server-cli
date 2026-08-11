@@ -1,3 +1,9 @@
+## [1.3.14](https://github.com/wppconnect-team/server-cli/compare/v1.3.13...v1.3.14) (2026-08-11)
+
+### Bug Fixes
+
+- **ci:** publish npm package with trusted publishing ([2f7199a](https://github.com/wppconnect-team/server-cli/commit/2f7199ae34bf7f200e78f5b0755b00bbbbdf6ae0))
+
 ## [1.3.13](https://github.com/wppconnect-team/server-cli/compare/v1.3.12...v1.3.13) (2026-08-11)
 
 ### Bug Fixes
