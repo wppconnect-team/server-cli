@@ -1,3 +1,9 @@
+## [1.3.16](https://github.com/wppconnect-team/server-cli/compare/v1.3.15...v1.3.16) (2026-08-11)
+
+### Bug Fixes
+
+- **ci:** run npm trusted publisher in isolation ([1e2c13b](https://github.com/wppconnect-team/server-cli/commit/1e2c13b4d2a100bd122327318a753747619d1b59))
+
 ## [1.3.15](https://github.com/wppconnect-team/server-cli/compare/v1.3.14...v1.3.15) (2026-08-11)
 
 ### Bug Fixes
