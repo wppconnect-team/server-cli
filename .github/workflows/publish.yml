@@ -1,4 +1,4 @@
-name: Publish
+name: Publish npm and release
 
 on:
   push:
@@ -41,8 +41,26 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Validate release version
+        shell: bash
+        run: |
+          package_version="$(node -p "require('./package.json').version")"
+          tag_version="${GITHUB_REF_NAME#v}"
+
+          if [[ "$package_version" != "$tag_version" ]]; then
+            echo "package.json version ($package_version) does not match tag ($GITHUB_REF_NAME)" >&2
+            exit 1
+          fi
+
+          if [[ ! "$package_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?$ ]]; then
+            echo "Invalid semantic version: $package_version" >&2
+            exit 1
+          fi
+
+          echo "RELEASE_VERSION=$package_version" >> "$GITHUB_ENV"
+
       - name: Install Dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
         env:
           PUPPETEER_SKIP_DOWNLOAD: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -51,26 +69,45 @@ jobs:
         run: yarn build
 
       - name: Publish in NPM
-        run: yarn publish --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Generate Changelog
-        id: generate_changelog
+      - name: Generate release notes
+        shell: bash
         run: |
-          changelog=$(npm run changelog:last --silent)
-          changelog="${changelog//$'\n'/'%0A'}"
-          changelog="${changelog//$'\r'/'%0D'}" 
-          echo "changelog=${changelog-<empty>}" >> "$GITHUB_OUTPUT"
+          npm run changelog:last --silent > "$RUNNER_TEMP/release-notes.md"
+
+          if [[ ! -s "$RUNNER_TEMP/release-notes.md" ]]; then
+            echo "Release $GITHUB_REF_NAME" > "$RUNNER_TEMP/release-notes.md"
+          fi
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+        shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body: ${{ steps.generate_changelog.outputs.changelog }}
-          draft: false
-          prerelease: false
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          release_args=(
+            "$GITHUB_REF_NAME"
+            --verify-tag
+            --title "$GITHUB_REF_NAME"
+            --notes-file "$RUNNER_TEMP/release-notes.md"
+          )
+
+          if [[ "$RELEASE_VERSION" == *-* ]]; then
+            release_args+=(--prerelease)
+          fi
+
+          gh release create "${release_args[@]}"
+
+      - name: Release summary
+        shell: bash
+        run: |
+          {
+            echo "### Published $GITHUB_REF_NAME"
+            echo "- npm: @wppconnect/server-cli@$RELEASE_VERSION"
+            echo "- Docker tags generated from the same Git tag:"
+            echo "  - wppconnect/server-cli:$GITHUB_REF_NAME"
+            echo "  - wppconnect/server-cli:$RELEASE_VERSION"
+            echo "  - wppconnect/server-cli:latest"
+          } >> "$GITHUB_STEP_SUMMARY"
