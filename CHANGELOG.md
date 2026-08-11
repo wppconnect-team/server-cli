@@ -1,3 +1,9 @@
+## [1.3.15](https://github.com/wppconnect-team/server-cli/compare/v1.3.14...v1.3.15) (2026-08-11)
+
+### Bug Fixes
+
+- **ci:** keep Node 22 for npm publishing ([50d47ef](https://github.com/wppconnect-team/server-cli/commit/50d47ef0ec870ecaf208f98a1b2b7fd64b21a007))
+
 ## [1.3.14](https://github.com/wppconnect-team/server-cli/compare/v1.3.13...v1.3.14) (2026-08-11)
 
 ### Bug Fixes
