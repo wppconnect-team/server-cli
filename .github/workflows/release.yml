@@ -73,7 +73,7 @@ jobs:
         if: steps.release-check.outputs.should_release == 'true'
         uses: actions/setup-node@v6
         with:
-          node-version: 22.22.2
+          node-version: 22.23.2
 
       - name: Get yarn cache directory
         if: steps.release-check.outputs.should_release == 'true'
