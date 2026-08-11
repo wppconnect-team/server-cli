@@ -1,3 +1,9 @@
+## [1.3.18](https://github.com/wppconnect-team/server-cli/compare/v1.3.17...v1.3.18) (2026-08-11)
+
+### Bug Fixes
+
+- **ci:** attribute releases to joaosouz4dev ([993405f](https://github.com/wppconnect-team/server-cli/commit/993405fe4bd6d27498312162159d5c57c2d1475e))
+
 ## [1.3.17](https://github.com/wppconnect-team/server-cli/compare/v1.3.16...v1.3.17) (2026-08-11)
 
 ### Bug Fixes
