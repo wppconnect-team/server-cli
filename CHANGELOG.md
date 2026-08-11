@@ -1,3 +1,9 @@
+## [1.3.17](https://github.com/wppconnect-team/server-cli/compare/v1.3.16...v1.3.17) (2026-08-11)
+
+### Bug Fixes
+
+- **package:** declare repository for npm provenance ([d55db19](https://github.com/wppconnect-team/server-cli/commit/d55db196042028c5a6702a0512bd92ed2e926360))
+
 ## [1.3.16](https://github.com/wppconnect-team/server-cli/compare/v1.3.15...v1.3.16) (2026-08-11)
 
 ### Bug Fixes
