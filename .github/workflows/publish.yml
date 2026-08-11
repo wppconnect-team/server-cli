@@ -6,6 +6,7 @@ on:
       - 'v*'
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -23,10 +24,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 22.22.2
+          node-version: 24.18.1
           registry-url: 'https://registry.npmjs.org'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Get yarn cache directory
         id: yarn-cache
@@ -63,12 +62,9 @@ jobs:
         run: yarn install --frozen-lockfile
         env:
           PUPPETEER_SKIP_DOWNLOAD: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Build
         run: yarn build
 
       - name: Publish in NPM
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
