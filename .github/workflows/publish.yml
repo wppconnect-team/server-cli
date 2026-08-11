@@ -24,8 +24,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.18.1
+          node-version: 22.22.2
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Upgrade npm for trusted publishing
+        run: npm install --global npm@12.0.2
 
       - name: Get yarn cache directory
         id: yarn-cache
@@ -33,7 +36,7 @@ jobs:
           echo "dir=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
 
       - name: Setup yarn cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
