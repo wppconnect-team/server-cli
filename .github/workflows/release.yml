@@ -1,6 +1,9 @@
 name: release
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       increment:
@@ -26,6 +29,9 @@ concurrency:
 
 jobs:
   release:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      !startsWith(github.event.head_commit.message, 'chore(release):')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,22 +41,48 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PERSONAL_TOKEN }}
 
+      - name: Determine release
+        id: release-check
+        shell: bash
+        env:
+          REQUESTED_INCREMENT: ${{ inputs.increment }}
+        run: |
+          increment="${REQUESTED_INCREMENT:-patch}"
+          should_release=true
+
+          if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
+            increment=patch
+            latest_tag="$(git describe --tags --abbrev=0 --match 'v[0-9]*' 2>/dev/null || true)"
+
+            if [[ -n "$latest_tag" ]] && git diff --quiet "$latest_tag..HEAD" -- .; then
+              should_release=false
+              echo "No changes since $latest_tag; skipping duplicate release"
+            fi
+          fi
+
+          echo "increment=$increment" >> "$GITHUB_OUTPUT"
+          echo "should_release=$should_release" >> "$GITHUB_OUTPUT"
+
       - name: Setup GIT
+        if: steps.release-check.outputs.should_release == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Setup Node
+        if: steps.release-check.outputs.should_release == 'true'
         uses: actions/setup-node@v6
         with:
           node-version: 22.22.2
 
       - name: Get yarn cache directory
+        if: steps.release-check.outputs.should_release == 'true'
         id: yarn-cache
         run: |
           echo "dir=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
 
       - name: Setup yarn cache
+        if: steps.release-check.outputs.should_release == 'true'
         uses: actions/cache@v4
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
@@ -59,12 +91,17 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
+        if: steps.release-check.outputs.should_release == 'true'
         run: yarn install --frozen-lockfile
         env:
           PUPPETEER_SKIP_DOWNLOAD: true
 
       - name: Build
+        if: steps.release-check.outputs.should_release == 'true'
         run: yarn build
 
       - name: Release
-        run: yarn release-it --ci --increment ${{ inputs.increment }}
+        if: steps.release-check.outputs.should_release == 'true'
+        run: >-
+          yarn release-it --ci --increment
+          ${{ steps.release-check.outputs.increment }}
