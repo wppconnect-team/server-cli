@@ -27,8 +27,8 @@ jobs:
           node-version: 22.22.2
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Upgrade npm for trusted publishing
-        run: npm install --global npm@12.0.2
+      - name: Verify npm for trusted publishing
+        run: npx --yes npm@12.0.2 --version
 
       - name: Get yarn cache directory
         id: yarn-cache
@@ -70,4 +70,4 @@ jobs:
         run: yarn build
 
       - name: Publish in NPM
-        run: npm publish --access public
+        run: npx --yes npm@12.0.2 publish --access public
