@@ -1,3 +1,10 @@
+## [1.3.13](https://github.com/wppconnect-team/server-cli/compare/v1.3.12...v1.3.13) (2026-08-11)
+
+### Bug Fixes
+
+- **release:** create GitHub release after Docker publish ([#813](https://github.com/wppconnect-team/server-cli/issues/813)) ([41ead15](https://github.com/wppconnect-team/server-cli/commit/41ead15266443b4a9cd3953a1ee72183bc7e0b80))
+- **release:** trigger patch releases from main ([#814](https://github.com/wppconnect-team/server-cli/issues/814)) ([97a401f](https://github.com/wppconnect-team/server-cli/commit/97a401ffcb01771a99cac51c58ecf278a6f933c4))
+
 ## [1.3.12](https://github.com/wppconnect-team/server-cli/compare/v1.3.11...v1.3.12) (2026-08-11)
 
 ### Bug Fixes
