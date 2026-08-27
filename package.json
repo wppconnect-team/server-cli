@@ -1,6 +1,6 @@
 {
   "name": "@wppconnect/server-cli",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "description": "Servidor de WPPConnect com frontend para ser executado a partir de uma linha de comando",
   "repository": {
     "type": "git",
