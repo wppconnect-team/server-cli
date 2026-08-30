@@ -67,7 +67,7 @@
     "redis": "^5.12.1",
     "release-it": "^17.11.0",
     "rimraf": "^5.0.10",
-    "sharp": "0.35.3"
+    "sharp": "0.35.4"
   },
   "peerDependencies": {
     "@img/sharp-win32-x64": "^0.35.4",
@@ -96,7 +96,7 @@
     "@wppconnect/server/**/tmp": "0.2.7",
     "@wppconnect/server/**/ws": "8.21.3",
     "**/package-json/got": "11.8.6",
-    "**/sharp": "0.35.3",
+    "**/sharp": "0.35.4",
     "@wppconnect-team/wppconnect/**/ws": "8.21.3",
     "@types/minimatch/**/minimatch": "10.2.5",
     "archiver-utils/**/minimatch": "9.0.7",
