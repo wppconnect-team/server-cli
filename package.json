@@ -92,7 +92,7 @@
     "@wppconnect/server/**/form-data": "4.0.6",
     "@wppconnect/server/**/multer": "2.2.0",
     "@wppconnect/server/**/path-to-regexp": "0.1.13",
-    "@wppconnect/server/**/qs": "6.15.2",
+    "@wppconnect/server/**/qs": "6.16.0",
     "@wppconnect/server/**/tmp": "0.2.7",
     "@wppconnect/server/**/ws": "8.21.3",
     "**/package-json/got": "11.8.6",
