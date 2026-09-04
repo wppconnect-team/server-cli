@@ -83,7 +83,7 @@
     "commitizen/**/ajv": "8.18.0",
     "eslint/**/ajv": "6.15.0",
     "basic-ftp": "5.3.1",
-    "fast-xml-parser": "5.7.0",
+    "fast-xml-parser": "5.11.1",
     "flatted": "3.4.4",
     "handlebars": "4.7.9",
     "@wppconnect/server/**/body-parser": "1.20.6",
