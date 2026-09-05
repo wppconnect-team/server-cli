@@ -88,7 +88,7 @@
     "handlebars": "4.7.9",
     "@wppconnect/server/**/body-parser": "1.20.6",
     "@wppconnect/server/**/brace-expansion": "1.1.18",
-    "@wppconnect/server/**/engine.io": "6.6.9",
+    "@wppconnect/server/**/engine.io": "6.6.10",
     "@wppconnect/server/**/form-data": "4.0.6",
     "@wppconnect/server/**/multer": "2.2.0",
     "@wppconnect/server/**/path-to-regexp": "0.1.13",
