@@ -60,7 +60,7 @@
     "eslint-plugin-prettier": "^4.2.5",
     "husky": "^9.1.7",
     "license-check-and-add": "^4.0.5",
-    "mongoose": "^9.7.4",
+    "mongoose": "^9.9.5",
     "nodemon": "^3.1.14",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.3.1",
@@ -73,7 +73,7 @@
     "@img/sharp-win32-x64": "^0.35.4",
     "aws-sdk": "^2.1693.0",
     "crypto-js": "^4.2.0",
-    "mongoose": "^9.7.4",
+    "mongoose": "^9.9.5",
     "redis": "^5.12.1"
   },
   "resolutions": {
