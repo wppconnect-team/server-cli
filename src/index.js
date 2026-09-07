@@ -58,6 +58,13 @@ export function run() {
 
   serverOptions = mergeDeep({}, serverOptions, commandOptions);
 
+  if (!serverOptions.secretKey) {
+    console.error(
+      'Erro: nenhuma "secretKey" foi definida. Configure --secretKey ou informe "secretKey" no arquivo de configuração para habilitar a autenticação da API.'
+    );
+    process.exit(1);
+  }
+
   const { app } = initServer(serverOptions);
 
   if (commandOptions.frontend) {
