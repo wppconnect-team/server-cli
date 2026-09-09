@@ -86,7 +86,7 @@
     "fast-xml-parser": "5.11.1",
     "flatted": "3.4.4",
     "handlebars": "4.7.9",
-    "@wppconnect/server/**/body-parser": "1.20.6",
+    "@wppconnect/server/**/body-parser": "1.20.8",
     "@wppconnect/server/**/brace-expansion": "1.1.18",
     "@wppconnect/server/**/engine.io": "6.6.10",
     "@wppconnect/server/**/form-data": "4.0.6",
