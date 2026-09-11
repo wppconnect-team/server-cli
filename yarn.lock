@@ -1836,15 +1836,10 @@
   resolved "https://registry.yarnpkg.com/@img/sharp-win32-ia32/-/sharp-win32-ia32-0.35.4.tgz#8d4755bd26d5ff34fb89c7907bd89c080a5dc9f5"
   integrity sha512-kqRsbaa5CS6KHlpxnN7WhE6vAAugXyZButpRdvDWetlv6Qv4N9WTcrWzF7tXfB9T7MsoadqdI8hmwLq6UlLvtw==
 
-"@img/sharp-win32-x64@0.35.4":
+"@img/sharp-win32-x64@0.35.4", "@img/sharp-win32-x64@^0.35.4":
   version "0.35.4"
   resolved "https://registry.yarnpkg.com/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.4.tgz#0b67bd0b1f01123a982afcc6ba0dc00b877b8a0a"
   integrity sha512-XtmnYhBcrORsJ4XJngyzr/EWP0hRZLAZRFaApdKuviyqF78+ylxh2y06ZmtULAMOnObJ3ucpN0AcwSWnMowTRg==
-
-"@img/sharp-win32-x64@^0.35.3":
-  version "0.35.3"
-  resolved "https://registry.yarnpkg.com/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.3.tgz#8a25cacdc75a8c26077c07fba51e8056aae474f1"
-  integrity sha512-D4y1vNeZrIIJCN+uHaWVtH86B+aCrdMYYjicy9pXHvbGZeGYLLSd3wdVuC37FxVXlU1ARsk84eKWfWMXGYEqvA==
 
 "@inquirer/external-editor@^1.0.0":
   version "1.0.3"
@@ -2382,22 +2377,21 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.3.0.tgz#d06bbb384ebcf6c505fde1c3d0ed4ddffe0aaff8"
   integrity sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==
 
-"@wppconnect-team/wppconnect@^2.2.7":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-2.3.1.tgz#8dd1c5ded8def35803e131188bdf24d624c8a613"
-  integrity sha512-Wm83Yhti8JkLXq++WAiac14iepnQhl71iQXuswFM/1o2UE14lNZoDx9cP4WQNyc8zoqTRNxg82dre5Xl6lawJg==
+"@wppconnect-team/wppconnect@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@wppconnect-team/wppconnect/-/wppconnect-2.3.3.tgz#fb06ecfc3d485dc8f29e1ac12c9c05d4538de127"
+  integrity sha512-coSWssnRJEQ/BvlpR8+C49O6qtzd7BbTKNyI1AAIYeOgzkfSJ+fHEgjTuARz/qspNXLovv0PQfuL/ZyDQ7Hahw==
   dependencies:
     "@wppconnect/wa-js" "^4.6.0"
     "@wppconnect/wa-version" "^1.5.4472"
     atob "^2.1.2"
-    axios "^1.19.0"
+    axios "^1.20.0"
     boxen "^5.1.2"
     catch-exit "^2.0.0"
     chalk "~4.1.2"
     chrome-launcher "^0.15.2"
     execa "^5.1.1"
     futoin-hkdf "^1.5.3"
-    latest-version "^9.0.0"
     logform "^2.7.0"
     lookpath "^1.2.3"
     mime-types "^3.0.2"
@@ -2410,13 +2404,13 @@
     reflect-metadata "^0.2.1"
     rimraf "^3.0.2"
     sanitize-filename "^1.6.4"
-    sharp "0.35.3"
+    sharp "0.35.4"
     tmp "^0.2.7"
     tree-kill "^1.2.2"
     winston "^3.19.0"
     ws "^8.21.3"
   optionalDependencies:
-    "@img/sharp-win32-x64" "^0.35.3"
+    "@img/sharp-win32-x64" "^0.35.4"
     fsevents "^2.3.3"
 
 "@wppconnect/frontend@^1.0.3":
@@ -2424,13 +2418,13 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@2.10.16":
-  version "2.10.16"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-2.10.16.tgz#ea8b5cd94fe6a426221f8fb6b3e1232ebe64a9e4"
-  integrity sha512-o49Ve8As3gc4HiOBfRRm5wWleSwRn0wy+cslbIkerJZXNP34zebq9Wmw1UxByUQK6Jyl2MnnncEKlwuTZx+yHw==
+"@wppconnect/server@2.10.23":
+  version "2.10.23"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-2.10.23.tgz#d78f0a130f3a9eba6503a4b8ddf1644bca918077"
+  integrity sha512-lSYmD4JkFn+LTlWMTBCjDFt+mlomu+N8BYwklsiqRtBtU6koIge3pl5ZCi+pulA+H4zhtPiGotBi0yTk30Up/A==
   dependencies:
     "@aws-sdk/client-s3" "^3.1019.0"
-    "@wppconnect-team/wppconnect" "^2.2.7"
+    "@wppconnect-team/wppconnect" "^2.3.3"
     archiver "^7.0.1"
     axios "^1.14.0"
     bcrypt "^6.0.0"
@@ -2440,6 +2434,7 @@
     dotenv "^16.6.1"
     express "4.22.2"
     express-query-boolean "^2.0.0"
+    express-rate-limit "^8.7.0"
     form-data "^4.0.6"
     json-mapper-json "^1.3.3"
     merge-deep "^3.0.3"
@@ -2749,7 +2744,7 @@ axios@^1.14.0:
     https-proxy-agent "^5.0.1"
     proxy-from-env "^2.1.0"
 
-axios@^1.19.0:
+axios@^1.20.0:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.20.0.tgz#515513445aa60e71d04b6521ca6210829ccb4786"
   integrity sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==
@@ -4499,6 +4494,14 @@ express-query-boolean@^2.0.0:
   resolved "https://registry.yarnpkg.com/express-query-boolean/-/express-query-boolean-2.0.0.tgz#ea56ac8138e2b95b171b8eee2af88738302941c3"
   integrity sha512-4dU/1HPm8lkTPR12+HFUXqCarcsC19OKOkb4otLOuADfPYrQMaugPJkSmxNsqwmWYjozvT6vdTiqkgeBHkzOow==
 
+express-rate-limit@^8.7.0:
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-8.7.0.tgz#87739a3535e7db3ca87b4a77b1ec5cc2c0a711e4"
+  integrity sha512-hOwV7WOxXfjRpAM1DSJWZDXx3GhplwD8IfwuwvogD8i1Qnkgosw/H45s4ZnFAUHDAhPjlY9hLBvJhKmGMyY26g==
+  dependencies:
+    debug "^4.4.3"
+    ip-address "^10.2.0"
+
 express@4.22.2:
   version "4.22.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.22.2.tgz#c17ae0981e5efc24b22272f0e041c4662503b700"
@@ -5463,6 +5466,11 @@ ip-address@^10.0.1:
   version "10.5.0"
   resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.5.0.tgz#fcd6d7dfe9e68416b7cb71afe9bc960b3e38c13b"
   integrity sha512-R5SnVLJmgYYvf2F2ZgwSBnelz5G4q5AxIC277GDfUaNbrZKNANcBC7RHqYYePlszf4kBolVkJauG0ZjHHFh55g==
+
+ip-address@^10.2.0:
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.7.0.tgz#9713429f16787ede8f642f6255b41fb515c825d9"
+  integrity sha512-BGFsyJd5mpXp3rK6jIdADLNgpJUK1jnjzvYF8lK+VyDab9JAmqN0YOKDdP17HlgKb2+ehPgDc8EtnRLbGCAMhA==
 
 ipaddr.js@1.9.1:
   version "1.9.1"
@@ -7704,7 +7712,7 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-sharp@0.35.3, sharp@0.35.4, sharp@^0.35.0:
+sharp@0.35.4, sharp@^0.35.0:
   version "0.35.4"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.35.4.tgz#361df3b2959daeb380541289960456c6be0f92de"
   integrity sha512-n++8XWcj+jCOr2IOl7h8LbKnGBDY4aPbmprMONBNFdn0ImXqpGVv5zliDs0V9HbmbCQLpbuo2ej9rAoOQTvMDA==
