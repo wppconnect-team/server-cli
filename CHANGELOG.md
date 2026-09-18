@@ -1,3 +1,9 @@
+## [1.3.38](https://github.com/wppconnect-team/server-cli/compare/v1.3.37...v1.3.38) (2026-09-18)
+
+### Bug Fixes
+
+- **deps:** update dependency @wppconnect/server to v2.10.27 ([#847](https://github.com/wppconnect-team/server-cli/issues/847)) ([480559c](https://github.com/wppconnect-team/server-cli/commit/480559c1139958146cf0c6c65c7740e7cb0859bc))
+
 ## [1.3.37](https://github.com/wppconnect-team/server-cli/compare/v1.3.36...v1.3.37) (2026-09-16)
 
 ## [1.3.36](https://github.com/wppconnect-team/server-cli/compare/v1.3.35...v1.3.36) (2026-09-15)
