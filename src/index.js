@@ -58,6 +58,13 @@ export function run() {
 
   serverOptions = mergeDeep({}, serverOptions, commandOptions);
 
+  if (!serverOptions.secretKey) {
+    console.error(
+      'Nenhuma "secretKey" foi definida. Defina uma chave secreta com --secretKey ou no arquivo de configuração para habilitar a validação de tokens e evitar acesso não autorizado.'
+    );
+    process.exit(1);
+  }
+
   const { app } = initServer(serverOptions);
 
   if (commandOptions.frontend) {
