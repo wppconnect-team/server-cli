@@ -1,3 +1,5 @@
+## [1.3.43](https://github.com/wppconnect-team/server-cli/compare/v1.3.42...v1.3.43) (2026-09-29)
+
 ## [1.3.42](https://github.com/wppconnect-team/server-cli/compare/v1.3.41...v1.3.42) (2026-09-29)
 
 ## [1.3.41](https://github.com/wppconnect-team/server-cli/compare/v1.3.40...v1.3.41) (2026-09-27)
