@@ -82,7 +82,7 @@
     "@commitlint/**/ajv": "8.18.0",
     "commitizen/**/ajv": "8.18.0",
     "eslint/**/ajv": "6.15.0",
-    "basic-ftp": "5.3.1",
+    "basic-ftp": "6.2.1",
     "fast-xml-parser": "5.11.2",
     "flatted": "3.4.4",
     "handlebars": "4.7.9",
