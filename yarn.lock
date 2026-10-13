@@ -2456,10 +2456,10 @@
   resolved "https://registry.yarnpkg.com/@wppconnect/frontend/-/frontend-1.0.3.tgz#d236ac170112605e12287217683a893b2675dbaf"
   integrity sha512-SqDiET38fhnl7y4Bu2SJ3rN1Z4rEon11rseUET69yY06r2mhm95r62n4s3frLE2vdE9ldw6OWFc4FZitX/MOkA==
 
-"@wppconnect/server@2.10.42":
-  version "2.10.42"
-  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-2.10.42.tgz#c16b529d9617ab90d39b16b116f3a78ed1c1410e"
-  integrity sha512-IAZztHGOeWvoAiD0uDv6jNnTnigULcAn4bsbdH2cby+BKy+DK7IvhKDU/9D/LruX24V67h7GoxrlcYQoREe24A==
+"@wppconnect/server@2.10.48":
+  version "2.10.48"
+  resolved "https://registry.yarnpkg.com/@wppconnect/server/-/server-2.10.48.tgz#3becffdf7c5dba273cc069a86f0813c107bc0d32"
+  integrity sha512-wcRePfoykZeBCxXIwyasvDNgYIKyKzLmkX20ggQ4vsdXdoCnWEa0DbX4nLe31sD6JkACsBRKcLItZkFt0V94sg==
   dependencies:
     "@aws-sdk/client-s3" "^3.1019.0"
     "@wppconnect-team/wppconnect" "^2.3.4"
