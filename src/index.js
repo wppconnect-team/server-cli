@@ -20,6 +20,8 @@ import * as path from 'path';
 import mergeDeep from 'merge-deep';
 import { program } from './program';
 
+const DEFAULT_SECRET_KEY = 'THISISMYSECURETOKEN';
+
 export function run() {
   let serverOptions = {};
 
@@ -58,9 +60,13 @@ export function run() {
 
   serverOptions = mergeDeep({}, serverOptions, commandOptions);
 
-  if (!serverOptions.secretKey) {
+  // @wppconnect/server signs tokens with `secretKey` and otherwise falls back to
+  // the public default, which would let anyone mint valid tokens.
+  const secretKey = serverOptions.secretKey || process.env.SECRET_KEY;
+
+  if (!secretKey || secretKey === DEFAULT_SECRET_KEY) {
     console.error(
-      'Erro: nenhuma "secretKey" foi definida. Configure --secretKey ou informe "secretKey" no arquivo de configuração para habilitar a autenticação da API.'
+      'Erro: nenhuma "secretKey" segura foi definida. Configure --secretKey, "secretKey" no arquivo de configuração ou a variável SECRET_KEY (o valor padrão público não é aceito).'
     );
     process.exit(1);
   }
