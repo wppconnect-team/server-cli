@@ -24,7 +24,8 @@
     "prepare": "husky",
     "release": "release-it",
     "start": "cross-env RUN_SERVER=1 babel-node src",
-    "watch": "nodemon -w src --exec \"babel-node src\""
+    "watch": "nodemon -w src --exec \"babel-node src\"",
+    "test": "node --require @babel/register --test --test-force-exit \"test/**/*.test.js\""
   },
   "config": {
     "commitizen": {

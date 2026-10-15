@@ -20,6 +20,8 @@ import * as path from 'path';
 import mergeDeep from 'merge-deep';
 import { program } from './program';
 
+const DEFAULT_SECRET_KEY = 'THISISMYSECURETOKEN';
+
 export function run() {
   let serverOptions = {};
 
@@ -57,6 +59,22 @@ export function run() {
   }
 
   serverOptions = mergeDeep({}, serverOptions, commandOptions);
+
+  // @wppconnect/server signs tokens with `secretKey` and otherwise falls back to
+  // the public default, which would let anyone mint valid tokens. An explicit
+  // empty/null value would also override that fallback (mergeDeep keeps it), so
+  // blank values count as unset and the validated secret is passed explicitly.
+  const isUsable = (value) => typeof value === 'string' && value.trim() !== '';
+  const secretKey = isUsable(serverOptions.secretKey) ? serverOptions.secretKey : process.env.SECRET_KEY;
+
+  if (!isUsable(secretKey) || secretKey === DEFAULT_SECRET_KEY) {
+    console.error(
+      'Erro: nenhuma "secretKey" segura foi definida. Configure --secretKey, "secretKey" no arquivo de configuração ou a variável SECRET_KEY (o valor padrão público não é aceito).'
+    );
+    process.exit(1);
+  }
+
+  serverOptions.secretKey = secretKey;
 
   const { app } = initServer(serverOptions);
 
