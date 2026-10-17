@@ -1,3 +1,9 @@
+## [1.3.52](https://github.com/wppconnect-team/server-cli/compare/v1.3.51...v1.3.52) (2026-10-17)
+
+### Bug Fixes
+
+- require a non-default secretKey and add HTTP auth regression tests ([f3859c1](https://github.com/wppconnect-team/server-cli/commit/f3859c1a9a1b8a62990a6bcba93d864a1157a921))
+
 ## [1.3.51](https://github.com/wppconnect-team/server-cli/compare/v1.3.50...v1.3.51) (2026-10-13)
 
 ### Bug Fixes
