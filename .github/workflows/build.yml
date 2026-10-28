@@ -42,6 +42,14 @@ jobs:
       - name: Build source
         run: yarn build
 
+      - name: Test source CLI
+        run: yarn test
+
+      - name: Test compiled CLI
+        run: yarn test
+        env:
+          WPP_CLI_TEST_COMPILED: '1'
+
   lint:
     runs-on: ubuntu-latest
     steps:
