@@ -17,7 +17,11 @@ const bcrypt = require(require.resolve('bcrypt', {
 const DEFAULT_SECRET = 'THISISMYSECURETOKEN';
 const SESSION = 'regression';
 const ROOT = path.resolve(__dirname, '..');
-const BABEL_NODE = path.join(ROOT, 'node_modules', '.bin', 'babel-node');
+const COMPILED = process.env.WPP_CLI_TEST_COMPILED === '1';
+const babelManifest = require.resolve('@babel/node/package.json');
+const CLI_ENTRY = COMPILED
+  ? path.join(ROOT, 'bin', 'wppserver.js')
+  : path.resolve(path.dirname(babelManifest), require(babelManifest).bin['babel-node']);
 
 const children = new Set();
 const tmpDirs = new Set();
@@ -50,15 +54,19 @@ async function startCli(args = [], env = {}, config) {
     fs.writeFileSync(file, JSON.stringify(config));
     args = [...args, '--config', file];
   }
-  const childEnv = { ...process.env, RUN_SERVER: '1', PORT: String(port), ...env };
+  const childEnv = { ...process.env, RUN_SERVER: COMPILED ? '' : '1', PORT: String(port), ...env };
   for (const key of Object.keys(childEnv)) {
     if (childEnv[key] === undefined) delete childEnv[key];
   }
 
-  const child = spawn(BABEL_NODE, ['src', '--port', String(port), '--no-startAllSession', ...args], {
-    cwd: ROOT,
-    env: childEnv,
-  });
+  const child = spawn(
+    process.execPath,
+    [CLI_ENTRY, ...(COMPILED ? [] : ['src']), '--port', String(port), '--no-startAllSession', ...args],
+    {
+      cwd: ROOT,
+      env: childEnv,
+    }
+  );
   children.add(child);
 
   let output = '';
