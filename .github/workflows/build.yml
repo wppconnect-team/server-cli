@@ -50,6 +50,11 @@ jobs:
         env:
           WPP_CLI_TEST_COMPILED: '1'
 
+      - name: Test packed CLI runtime security
+        run: npm run test:packed-security
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+
   lint:
     runs-on: ubuntu-latest
     steps:

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import './security';
 import { initServer } from '@wppconnect/server';
 import * as express from 'express';
 import * as fs from 'fs';
