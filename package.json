@@ -43,8 +43,6 @@
     "@aws-sdk/client-s3": "^3.1156.0",
     "@babel/cli": "^8.0.6",
     "@babel/core": "^8.0.9",
-    "@babel/eslint-parser": "^8.0.7",
-    "@babel/eslint-plugin": "^8.0.6",
     "@babel/node": "^8.0.6",
     "@babel/plugin-transform-runtime": "^8.0.6",
     "@babel/preset-env": "^8.0.7",

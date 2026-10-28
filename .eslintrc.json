@@ -4,8 +4,10 @@
     "es6": true,
     "node": true
   },
-  "parser": "@babel/eslint-parser",
-  "plugins": ["@babel"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
     "no-empty": ["error", { "allowEmptyCatch": true }],
