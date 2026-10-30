@@ -1,3 +1,11 @@
+## [1.3.57](https://github.com/wppconnect-team/server-cli/compare/v1.3.56...v1.3.57) (2026-10-30)
+
+### Bug Fixes
+
+- complete Babel 8 migration and preserve CommonJS CLI ([#844](https://github.com/wppconnect-team/server-cli/issues/844)) ([a91dd3e](https://github.com/wppconnect-team/server-cli/commit/a91dd3e9cfedf1c97ae65ec1e4fa590c0ec8ab59))
+- **deps:** resolve remaining CLI security alerts ([#876](https://github.com/wppconnect-team/server-cli/issues/876)) ([57ee10d](https://github.com/wppconnect-team/server-cli/commit/57ee10dcacb27f74101494a2f04743fcc3b242f5))
+- protect browser option merging in installed CLI packages ([#877](https://github.com/wppconnect-team/server-cli/issues/877)) ([a61a8e2](https://github.com/wppconnect-team/server-cli/commit/a61a8e2f16e70d6daf3f9da9e07d039b074cd42f))
+
 ## [1.3.56](https://github.com/wppconnect-team/server-cli/compare/v1.3.55...v1.3.56) (2026-10-27)
 
 ### Bug Fixes
