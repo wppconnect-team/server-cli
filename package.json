@@ -34,7 +34,7 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^8.0.8",
+    "@babel/runtime": "^8.0.10",
     "@wppconnect/server": "2.10.68",
     "commander": "^14.0.3",
     "merge-deep": "^3.0.3",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1156.0",
     "@babel/cli": "^8.0.6",
-    "@babel/core": "^8.0.9",
+    "@babel/core": "^8.0.10",
     "@babel/node": "^8.0.6",
     "@babel/plugin-transform-runtime": "^8.0.6",
     "@babel/preset-env": "^8.0.7",
