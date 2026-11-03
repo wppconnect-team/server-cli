@@ -21,10 +21,12 @@ const os = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
 
+const normalizePaths = (values) => values.map((value) => value.split(path.sep).join('/')).sort();
+
 test('rimraf ESM executable loads brace expansion and removes its target', () => {
   const owner = createRequire(require.resolve('rimraf'));
   const globOwner = createRequire(owner.resolve('glob'));
-  assert.equal(globOwner('minimatch/package.json').version, '9.0.9');
+  assert.equal(globOwner('minimatch/package.json').version, '11.0.4');
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-rimraf-'));
   try {
     const target = path.join(directory, 'output');
@@ -43,7 +45,7 @@ test('rimraf ESM executable loads brace expansion and removes its target', () =>
 test('archiver glob expands braces and exclusions through its own minimatch', () => {
   const owner = createRequire(require.resolve('archiver-utils'));
   const globOwner = createRequire(owner.resolve('glob'));
-  assert.equal(globOwner('minimatch/package.json').version, '9.0.9');
+  assert.equal(globOwner('minimatch/package.json').version, '11.0.4');
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-glob-'));
   try {
     for (const name of ['first.txt', 'second.txt', 'ignored.txt']) {
@@ -60,10 +62,24 @@ test('archiver glob expands braces and exclusions through its own minimatch', ()
 });
 
 test('legacy glob retains its callable minimatch and brace expansion APIs', () => {
-  const owner = createRequire(require.resolve('glob'));
+  const licenseOwner = createRequire(require.resolve('license-check-and-add/package.json'));
+  const globbyOwner = createRequire(licenseOwner.resolve('globby'));
+  const owner = createRequire(globbyOwner.resolve('glob'));
   const minimatch = owner('minimatch');
   assert.equal(minimatch('first.txt', '{first,second}.txt'), true);
   assert.equal(minimatch('third.txt', '{first,second}.txt'), false);
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-legacy-glob-'));
+  try {
+    fs.mkdirSync(path.join(directory, 'nested'));
+    fs.writeFileSync(path.join(directory, 'nested', 'fixture.txt'), 'fixture');
+    const globby = licenseOwner('globby');
+    assert.deepEqual(normalizePaths(globby.sync(['**/*.txt'], { cwd: directory })), ['nested/fixture.txt']);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-legacy-glob-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
 });
 
 test('nodemon retains its named minimatch API for watched file patterns', () => {
@@ -71,4 +87,124 @@ test('nodemon retains its named minimatch API for watched file patterns', () => 
   const { minimatch } = owner('minimatch');
   assert.equal(minimatch('src/index.js', 'src/{index,config}.js'), true);
   assert.equal(minimatch('src/ignored.js', 'src/{index,config}.js'), false);
+});
+
+test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics', async () => {
+  const archiver = require('archiver');
+  const unzipper = require('unzipper');
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-archive-'));
+  try {
+    fs.mkdirSync(path.join(directory, 'nested'));
+    for (const name of ['a.txt', 'b.bin', 'ignore.txt', '.hidden.txt'])
+      fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
+    const archiveOwner = createRequire(require.resolve('archiver'));
+    const traversalOwner = createRequire(archiveOwner.resolve('readdir-glob'));
+    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.4');
+    const zip = archiver('zip');
+    const chunks = [];
+    const ended = new Promise((resolve, reject) => {
+      zip.on('data', (chunk) => chunks.push(chunk));
+      zip.once('end', resolve);
+      zip.once('error', reject);
+    });
+    zip.glob('**/*.{txt,bin}', { cwd: directory, dot: true, ignore: '**/ignore.txt' });
+    await zip.finalize();
+    await ended;
+    const result = await unzipper.Open.buffer(Buffer.concat(chunks));
+    assert.deepEqual(result.files.map((file) => file.path).sort(), [
+      'nested/.hidden.txt',
+      'nested/a.txt',
+      'nested/b.bin',
+    ]);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-archive-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
+});
+
+test('the actual modern matching engine bounds first-phase pattern amplification', () => {
+  const owner = createRequire(require.resolve('archiver-utils'));
+  const globOwner = createRequire(owner.resolve('glob'));
+  const modulePath = globOwner.resolve('minimatch');
+  const code = `
+    const assert = require('node:assert/strict');
+    const { Minimatch } = require(${JSON.stringify(modulePath)});
+    let peak = 0;
+    class Probe extends Minimatch {
+      firstPhasePreProcess(parts) {
+        const result = super.firstPhasePreProcess(parts);
+        peak = result.length;
+        return result;
+      }
+    }
+    new Probe(Array.from({length:12}, (_, i) => 'p'+i+'/**/../q'+i).join('/'),
+      { optimizationLevel: 2, braceExpandMax: 64 });
+    assert(peak > 1 && peak <= 64, 'pattern budget exceeded: '+peak);
+  `;
+  execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
+    encoding: 'utf8',
+    timeout: 3000,
+  });
+});
+
+test('modern glob owners traverse recursive wildcards with their installed matcher', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-owner-globs-'));
+  try {
+    fs.mkdirSync(path.join(directory, 'nested'));
+    for (const name of ['a.txt', 'b.bin', 'ignore.txt', '.hidden.txt']) {
+      fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
+    }
+    for (const name of ['archiver-utils', 'rimraf']) {
+      const owner = createRequire(require.resolve(name));
+      const glob = owner('glob');
+      assert.deepEqual(
+        normalizePaths(glob.sync('**/*.txt', { cwd: directory })),
+        ['nested/a.txt', 'nested/ignore.txt'],
+        name
+      );
+      assert.deepEqual(
+        normalizePaths(glob.sync('**/*.{txt,bin}', { cwd: directory, dot: true, ignore: '**/ignore.txt' })),
+        ['nested/.hidden.txt', 'nested/a.txt', 'nested/b.bin'],
+        name
+      );
+    }
+    assert.deepEqual(normalizePaths(require('archiver-utils/file').expand({ cwd: directory }, ['**/*.txt'])), [
+      'nested/a.txt',
+      'nested/ignore.txt',
+    ]);
+    const manifest = require.resolve('rimraf/package.json');
+    const executable = path.resolve(path.dirname(manifest), require(manifest).bin);
+    execFileSync(process.execPath, [executable, '--glob', 'nested/*.bin'], { cwd: directory, encoding: 'utf8' });
+    assert.equal(fs.existsSync(path.join(directory, 'nested', 'b.bin')), false);
+    assert.equal(fs.existsSync(path.join(directory, 'nested', 'a.txt')), true);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-owner-globs-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
+});
+
+test('nested legacy rimraf preserves callback and wildcard deletion contracts', async () => {
+  const plugin = createRequire(require.resolve('puppeteer-extra-plugin-user-data-dir'));
+  const owner = createRequire(plugin.resolve('rimraf'));
+  const rimraf = plugin('rimraf');
+  assert.equal(typeof rimraf, 'function');
+  assert.equal(typeof owner('glob'), 'function');
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-legacy-rimraf-'));
+  try {
+    fs.writeFileSync(path.join(directory, 'remove.txt'), 'fixture');
+    fs.writeFileSync(path.join(directory, 'keep.bin'), 'fixture');
+    const pattern = directory.split(path.sep).join('/') + '/*.txt';
+    await new Promise((resolve, reject) => rimraf(pattern, (error) => (error ? reject(error) : resolve())));
+    assert.equal(fs.existsSync(path.join(directory, 'remove.txt')), false);
+    assert.equal(fs.existsSync(path.join(directory, 'keep.bin')), true);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-legacy-rimraf-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
 });
