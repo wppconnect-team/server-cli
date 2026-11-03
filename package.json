@@ -1,6 +1,6 @@
 {
   "name": "@wppconnect/server-cli",
-  "version": "1.3.61",
+  "version": "1.3.62",
   "description": "Servidor de WPPConnect com frontend para ser executado a partir de uma linha de comando",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "prom-client": "^15.1.3"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.1156.0",
+    "@aws-sdk/client-s3": "^3.1161.0",
     "@babel/cli": "^8.0.6",
     "@babel/core": "^8.0.10",
     "@babel/node": "^8.0.6",
@@ -96,12 +96,14 @@
     "**/package-json/got": "11.8.6",
     "**/sharp": "0.35.5",
     "@wppconnect-team/wppconnect/**/ws": "8.22.0",
-    "@types/minimatch/**/minimatch": "11.0.1",
-    "**/archiver-utils/**/minimatch": "11.0.1",
-    "nodemon/**/minimatch": "11.0.1",
+    "@types/minimatch/**/minimatch": "11.0.4",
+    "**/archiver-utils/**/minimatch": "11.0.4",
+    "**/archiver-utils/**/glob": "14.0.2",
+    "nodemon/**/minimatch": "11.0.4",
     "pretty-quick/**/picomatch": "3.0.2",
-    "readdir-glob/**/minimatch": "11.0.1",
-    "**/rimraf/**/minimatch": "11.0.1",
+    "**/readdir-glob/**/minimatch": "11.0.4",
+    "**/rimraf/**/minimatch": "11.0.4",
+    "**/rimraf/**/glob": "14.0.2",
     "**/nodemon/**/brace-expansion": "5.0.12",
     "**/readdir-glob/**/brace-expansion": "2.1.7",
     "puppeteer": "25.13.0",
