@@ -68,6 +68,18 @@ test('legacy glob retains its callable minimatch and brace expansion APIs', () =
   const minimatch = owner('minimatch');
   assert.equal(minimatch('first.txt', '{first,second}.txt'), true);
   assert.equal(minimatch('third.txt', '{first,second}.txt'), false);
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-legacy-glob-'));
+  try {
+    fs.mkdirSync(path.join(directory, 'nested'));
+    fs.writeFileSync(path.join(directory, 'nested', 'fixture.txt'), 'fixture');
+    const globby = licenseOwner('globby');
+    assert.deepEqual(normalizePaths(globby.sync(['**/*.txt'], { cwd: directory })), ['nested/fixture.txt']);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-legacy-glob-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
 });
 
 test('nodemon retains its named minimatch API for watched file patterns', () => {
@@ -171,6 +183,28 @@ test('modern glob owners traverse recursive wildcards with their installed match
     const resolved = fs.realpathSync(directory);
     assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
     assert.ok(path.basename(resolved).startsWith('wppcli-owner-globs-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
+});
+
+test('nested legacy rimraf preserves callback and wildcard deletion contracts', async () => {
+  const plugin = createRequire(require.resolve('puppeteer-extra-plugin-user-data-dir'));
+  const owner = createRequire(plugin.resolve('rimraf'));
+  const rimraf = plugin('rimraf');
+  assert.equal(typeof rimraf, 'function');
+  assert.equal(typeof owner('glob'), 'function');
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-legacy-rimraf-'));
+  try {
+    fs.writeFileSync(path.join(directory, 'remove.txt'), 'fixture');
+    fs.writeFileSync(path.join(directory, 'keep.bin'), 'fixture');
+    const pattern = directory.split(path.sep).join('/') + '/*.txt';
+    await new Promise((resolve, reject) => rimraf(pattern, (error) => (error ? reject(error) : resolve())));
+    assert.equal(fs.existsSync(path.join(directory, 'remove.txt')), false);
+    assert.equal(fs.existsSync(path.join(directory, 'keep.bin')), true);
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-legacy-rimraf-'));
     fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
   }
 });
