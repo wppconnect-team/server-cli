@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
 const path = require('node:path');
 const { createRequire } = require('node:module');
 
@@ -25,8 +26,19 @@ const server = createRequire(project.resolve('@wppconnect/server'));
 const core = createRequire(server.resolve('@wppconnect-team/wppconnect'));
 const extra = createRequire(core.resolve('puppeteer-extra'));
 const merge = extra('deepmerge');
-const privateRuntime = path.join(root, 'vendor', 'deepmerge', 'index.cjs');
-assert.equal(merge, project(privateRuntime));
+const cliRuntime = path.join(root, 'vendor', 'deepmerge', 'index.cjs');
+let privateRuntime = cliRuntime;
+if (merge !== project(cliRuntime)) {
+  // The server also protects registry installs. Its later hook can supply its
+  // own copy, but accept it only when both reviewed runtime files are identical.
+  const serverRoot = path.dirname(project.resolve('@wppconnect/server/package.json'));
+  privateRuntime = path.join(serverRoot, 'vendor', 'deepmerge', 'index.cjs');
+  for (const file of ['index.cjs', 'is-mergeable-object.cjs']) {
+    const source = (runtime) => fs.readFileSync(path.join(path.dirname(runtime), file), 'utf8').replace(/\r\n/g, '\n');
+    assert.equal(source(privateRuntime), source(cliRuntime), `Unreviewed server merger runtime: ${file}`);
+  }
+  assert.equal(merge, server(privateRuntime));
+}
 const payload = JSON.parse('{"__proto__":{"isAdmin":true}}');
 for (const result of [
   merge(Object.create(null), payload),
@@ -38,11 +50,14 @@ for (const result of [
 }
 assert.deepEqual(merge.all([{ args: ['a'] }, { args: ['b'] }]), { args: ['a', 'b'] });
 assert.equal({}.isAdmin, undefined);
-console.log(
+// The imported server owns background timers; finish after these synchronous
+// assertions and flush the result before terminating this fixture process.
+process.stdout.write(
   JSON.stringify({
     publicEntryLoaded: true,
     privateRuntime,
     dependencyMetadataVersion: extra('deepmerge/package.json').version,
     prototypeCasesPassed: 3,
-  })
+  }) + '\n',
+  () => process.exit(0)
 );

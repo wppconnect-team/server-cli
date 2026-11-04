@@ -18,6 +18,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { createRequire } = require('node:module');
 const { spawnSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
@@ -66,6 +67,27 @@ try {
       '@wppconnect/server-cli'
     );
     process.stdout.write(run([helper, installed], prefix));
+    // A separate server-owned copy is accepted only while its source matches
+    // the reviewed CLI backport. Do not let this exception trust arbitrary code.
+    const consumer = createRequire(path.join(installed, 'package.json'));
+    const serverRoot = path.dirname(consumer.resolve('@wppconnect/server/package.json'));
+    for (const file of ['index.cjs', 'is-mergeable-object.cjs']) {
+      const runtime = path.join(serverRoot, 'vendor', 'deepmerge', file);
+      const original = fs.readFileSync(runtime);
+      try {
+        fs.appendFileSync(runtime, '\n// Unreviewed fixture change.\n');
+        const rejected = spawnSync(process.execPath, [helper, installed], {
+          cwd: prefix,
+          env,
+          encoding: 'utf8',
+          timeout: 30000,
+        });
+        assert.notEqual(rejected.status, 0);
+        assert.match(rejected.stderr, /Unreviewed server merger runtime:/);
+      } finally {
+        fs.writeFileSync(runtime, original);
+      }
+    }
     const help = run([path.join(installed, 'bin', 'wppserver.js'), '--help'], prefix);
     assert.match(help, /Usage:/);
   }
