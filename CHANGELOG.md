@@ -1,3 +1,10 @@
+## [1.3.63](https://github.com/wppconnect-team/server-cli/compare/v1.3.62...v1.3.63) (2026-11-05)
+
+### Bug Fixes
+
+- **deps:** bump @wppconnect/server to 2.10.75 for CVE-2026-121557 ([#887](https://github.com/wppconnect-team/server-cli/issues/887)) ([d021d0c](https://github.com/wppconnect-team/server-cli/commit/d021d0c258b7fc6d92b9bc1c2e5ba35c998c9afc))
+- **deps:** keep nested legacy rimraf glob compatibility ([e3a5d55](https://github.com/wppconnect-team/server-cli/commit/e3a5d55103c7d9ccb3b74281bfa4f24ed2a460c1))
+
 ## [1.3.62](https://github.com/wppconnect-team/server-cli/compare/v1.3.61...v1.3.62) (2026-11-02)
 
 ## [1.3.61](https://github.com/wppconnect-team/server-cli/compare/v1.3.60...v1.3.61) (2026-11-02)
