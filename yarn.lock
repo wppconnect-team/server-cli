@@ -2657,10 +2657,10 @@ baseline-browser-mapping@2.11.35, baseline-browser-mapping@^2.11.20:
   resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.35.tgz#3ca6f40d1c594ab494d8a21b05d5316528a41563"
   integrity sha512-GNk8KX52CHqeNKGk8+7tZnQab/2k1t/BgrUHPKNdijzpEhF1saPQZHVKb6m5loSAxB39gyrTYw34Qf9CQ3u1qQ==
 
-basic-ftp@6.2.4, basic-ftp@^5.0.2:
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-6.2.4.tgz#de4ea436b766326194cb756e0f1086e5d969f89d"
-  integrity sha512-6ACKOQxSlv5xka4i03ujfncNr9qp5yZNK3u0+yUFTAU4HfG5AeztCC9+R1I9dm8oq+1vt4RZ7cIRTBrdHqL2mw==
+basic-ftp@6.2.6, basic-ftp@^5.0.2:
+  version "6.2.6"
+  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-6.2.6.tgz#84905c94db0e10415c9ba4ce61b30bc38875905a"
+  integrity sha512-0EjZCaodOz6yiokv2JA1VyKGNdGxULZ+GGlPgG9tm4d+T/bHtX1hUch8CumDneBfpIbiSdn7TaCGwpM+gwsOlw==
 
 bcrypt@^6.0.0:
   version "6.0.0"
