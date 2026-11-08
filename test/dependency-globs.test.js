@@ -23,10 +23,29 @@ const { test } = require('node:test');
 
 const normalizePaths = (values) => values.map((value) => value.split(path.sep).join('/')).sort();
 
+function assertPatternBudget(modulePath) {
+  const code = `
+    const assert = require('node:assert/strict');
+    const { Minimatch } = require(${JSON.stringify(modulePath)});
+    const options = { optimizationLevel: 2, braceExpandMax: 64 };
+    const normal = new Minimatch('**/*.{txt,bin}', options);
+    assert.equal(normal.match('nested/a.txt'), true);
+    assert.equal(normal.match('nested/a.js'), false);
+    assert.throws(
+      () => new Minimatch(Array.from({length:12}, (_, i) => 'p'+i+'/**/../q'+i).join('/'), options),
+      { name: 'RangeError', message: "optimizationLevel 2: too many patterns from '**/..'" }
+    );
+  `;
+  execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
+    encoding: 'utf8',
+    timeout: 3000,
+  });
+}
+
 test('rimraf ESM executable loads brace expansion and removes its target', () => {
   const owner = createRequire(require.resolve('rimraf'));
   const globOwner = createRequire(owner.resolve('glob'));
-  assert.equal(globOwner('minimatch/package.json').version, '11.0.4');
+  assert.equal(globOwner('minimatch/package.json').version, '11.0.5');
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-rimraf-'));
   try {
     const target = path.join(directory, 'output');
@@ -45,7 +64,7 @@ test('rimraf ESM executable loads brace expansion and removes its target', () =>
 test('archiver glob expands braces and exclusions through its own minimatch', () => {
   const owner = createRequire(require.resolve('archiver-utils'));
   const globOwner = createRequire(owner.resolve('glob'));
-  assert.equal(globOwner('minimatch/package.json').version, '11.0.4');
+  assert.equal(globOwner('minimatch/package.json').version, '11.0.5');
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-glob-'));
   try {
     for (const name of ['first.txt', 'second.txt', 'ignored.txt']) {
@@ -130,47 +149,14 @@ test('the actual Archiver traversal engine rejects excessive first-phase work', 
   const owner = createRequire(archiveOwner.resolve('readdir-glob'));
   assert.equal(owner('minimatch/package.json').version, '11.0.5');
   const modulePath = owner.resolve('minimatch');
-  const code = `
-    const assert = require('node:assert/strict');
-    const { Minimatch } = require(${JSON.stringify(modulePath)});
-    const options = { optimizationLevel: 2, braceExpandMax: 64 };
-    const normal = new Minimatch('**/*.{txt,bin}', options);
-    assert.equal(normal.match('nested/a.txt'), true);
-    assert.equal(normal.match('nested/a.js'), false);
-    assert.throws(
-      () => new Minimatch(Array.from({length:12}, (_, i) => 'p'+i+'/**/../q'+i).join('/'), options),
-      { name: 'RangeError', message: "optimizationLevel 2: too many patterns from '**/..'" }
-    );
-  `;
-  execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
-    encoding: 'utf8',
-    timeout: 3000,
-  });
+  assertPatternBudget(modulePath);
 });
 
-test('the actual modern matching engine bounds first-phase pattern amplification', () => {
+test('the actual glob matching engine rejects excessive first-phase work', () => {
   const owner = createRequire(require.resolve('archiver-utils'));
   const globOwner = createRequire(owner.resolve('glob'));
   const modulePath = globOwner.resolve('minimatch');
-  const code = `
-    const assert = require('node:assert/strict');
-    const { Minimatch } = require(${JSON.stringify(modulePath)});
-    let peak = 0;
-    class Probe extends Minimatch {
-      firstPhasePreProcess(parts) {
-        const result = super.firstPhasePreProcess(parts);
-        peak = result.length;
-        return result;
-      }
-    }
-    new Probe(Array.from({length:12}, (_, i) => 'p'+i+'/**/../q'+i).join('/'),
-      { optimizationLevel: 2, braceExpandMax: 64 });
-    assert(peak > 1 && peak <= 64, 'pattern budget exceeded: '+peak);
-  `;
-  execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
-    encoding: 'utf8',
-    timeout: 3000,
-  });
+  assertPatternBudget(modulePath);
 });
 
 test('modern glob owners traverse recursive wildcards with their installed matcher', () => {
