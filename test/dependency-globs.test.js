@@ -84,6 +84,7 @@ test('legacy glob retains its callable minimatch and brace expansion APIs', () =
 
 test('nodemon retains its named minimatch API for watched file patterns', () => {
   const owner = createRequire(require.resolve('nodemon'));
+  assert.equal(owner('minimatch/package.json').version, '11.0.5');
   const { minimatch } = owner('minimatch');
   assert.equal(minimatch('src/index.js', 'src/{index,config}.js'), true);
   assert.equal(minimatch('src/ignored.js', 'src/{index,config}.js'), false);
@@ -99,7 +100,7 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
       fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
     const archiveOwner = createRequire(require.resolve('archiver'));
     const traversalOwner = createRequire(archiveOwner.resolve('readdir-glob'));
-    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.4');
+    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.5');
     const zip = archiver('zip');
     const chunks = [];
     const ended = new Promise((resolve, reject) => {
@@ -122,6 +123,29 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
     assert.ok(path.basename(resolved).startsWith('wppcli-archive-'));
     fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
   }
+});
+
+test('the actual Archiver traversal engine rejects excessive first-phase work', () => {
+  const archiveOwner = createRequire(require.resolve('archiver'));
+  const owner = createRequire(archiveOwner.resolve('readdir-glob'));
+  assert.equal(owner('minimatch/package.json').version, '11.0.5');
+  const modulePath = owner.resolve('minimatch');
+  const code = `
+    const assert = require('node:assert/strict');
+    const { Minimatch } = require(${JSON.stringify(modulePath)});
+    const options = { optimizationLevel: 2, braceExpandMax: 64 };
+    const normal = new Minimatch('**/*.{txt,bin}', options);
+    assert.equal(normal.match('nested/a.txt'), true);
+    assert.equal(normal.match('nested/a.js'), false);
+    assert.throws(
+      () => new Minimatch(Array.from({length:12}, (_, i) => 'p'+i+'/**/../q'+i).join('/'), options),
+      { name: 'RangeError', message: "optimizationLevel 2: too many patterns from '**/..'" }
+    );
+  `;
+  execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
+    encoding: 'utf8',
+    timeout: 3000,
+  });
 });
 
 test('the actual modern matching engine bounds first-phase pattern amplification', () => {
