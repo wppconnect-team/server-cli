@@ -105,7 +105,7 @@
     "rimraf/**/minimatch": "11.0.5",
     "rimraf/glob": "14.0.4",
     "**/nodemon/**/brace-expansion": "5.0.12",
-    "**/readdir-glob/**/brace-expansion": "2.1.7",
+    "**/readdir-glob/**/brace-expansion": "2.1.8",
     "puppeteer": "25.13.0",
     "http-cache-semantics": "4.3.0",
     "browserslist": "4.29.5",
