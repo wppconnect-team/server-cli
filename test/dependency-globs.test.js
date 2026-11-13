@@ -103,7 +103,7 @@ test('legacy glob retains its callable minimatch and brace expansion APIs', () =
 
 test('nodemon retains its named minimatch API for watched file patterns', () => {
   const owner = createRequire(require.resolve('nodemon'));
-  assert.equal(owner('minimatch/package.json').version, '11.0.5');
+  assert.equal(owner('minimatch/package.json').version, '11.0.8');
   const { minimatch } = owner('minimatch');
   assert.equal(minimatch('src/index.js', 'src/{index,config}.js'), true);
   assert.equal(minimatch('src/ignored.js', 'src/{index,config}.js'), false);
@@ -119,7 +119,7 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
       fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
     const archiveOwner = createRequire(require.resolve('archiver'));
     const traversalOwner = createRequire(archiveOwner.resolve('readdir-glob'));
-    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.5');
+    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.8');
     const zip = archiver('zip');
     const chunks = [];
     const ended = new Promise((resolve, reject) => {
@@ -147,7 +147,7 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
 test('the actual Archiver traversal engine rejects excessive first-phase work', () => {
   const archiveOwner = createRequire(require.resolve('archiver'));
   const owner = createRequire(archiveOwner.resolve('readdir-glob'));
-  assert.equal(owner('minimatch/package.json').version, '11.0.5');
+  assert.equal(owner('minimatch/package.json').version, '11.0.8');
   const modulePath = owner.resolve('minimatch');
   assertPatternBudget(modulePath);
 });
