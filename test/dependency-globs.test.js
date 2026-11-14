@@ -220,8 +220,8 @@ test('nested legacy rimraf preserves callback and wildcard deletion contracts', 
 });
 
 // Glob ignore patterns must enforce the same expansion budget as patterns.
-test('every modern glob owner rejects amplified ignore patterns', () => {
-  for (const name of ['archiver-utils', 'rimraf', '@babel/cli']) {
+test('selected glob owners reject amplified ignore patterns', () => {
+  for (const name of ['archiver-utils', 'rimraf', '@babel/cli', 'cacache']) {
     const owner = createRequire(require.resolve(name + '/package.json'));
     const code = `
       const assert = require('node:assert/strict');
@@ -236,5 +236,24 @@ test('every modern glob owner rejects amplified ignore patterns', () => {
       encoding: 'utf8',
       timeout: 6000,
     });
+  }
+});
+
+test('cacache verifies and removes real cached content through its glob owner', async () => {
+  const cacache = require('cacache');
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'wppcli-cacache-'));
+  try {
+    await cacache.put(directory, 'first', 'first fixture');
+    await cacache.put(directory, 'second', 'second fixture');
+    assert.deepEqual(Object.keys(await cacache.ls(directory)).sort(), ['first', 'second']);
+    await cacache.verify(directory);
+    assert.equal((await cacache.get(directory, 'first')).data.toString(), 'first fixture');
+    await cacache.rm.all(directory);
+    assert.deepEqual(await cacache.ls(directory), {});
+  } finally {
+    const resolved = fs.realpathSync(directory);
+    assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(resolved).startsWith('wppcli-cacache-'));
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
   }
 });

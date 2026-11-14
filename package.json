@@ -100,6 +100,7 @@
     "**/archiver-utils/**/minimatch": "11.0.8",
     "**/archiver-utils/**/glob": "14.0.6",
     "@babel/cli/glob": "14.0.6",
+    "**/cacache/**/glob": "14.0.6",
     "nodemon/**/minimatch": "11.0.8",
     "pretty-quick/**/picomatch": "3.0.2",
     "**/readdir-glob/**/minimatch": "11.0.8",
