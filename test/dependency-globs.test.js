@@ -166,8 +166,8 @@ test('modern glob owners traverse recursive wildcards with their installed match
     for (const name of ['a.txt', 'b.bin', 'ignore.txt', '.hidden.txt']) {
       fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
     }
-    for (const name of ['archiver-utils', 'rimraf']) {
-      const owner = createRequire(require.resolve(name));
+    for (const name of ['archiver-utils', 'rimraf', '@babel/cli']) {
+      const owner = createRequire(require.resolve(name + '/package.json'));
       const glob = owner('glob');
       assert.deepEqual(
         normalizePaths(glob.sync('**/*.txt', { cwd: directory })),
@@ -216,5 +216,25 @@ test('nested legacy rimraf preserves callback and wildcard deletion contracts', 
     assert.equal(path.dirname(resolved), fs.realpathSync(os.tmpdir()));
     assert.ok(path.basename(resolved).startsWith('wppcli-legacy-rimraf-'));
     fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 3 });
+  }
+});
+
+// Glob ignore patterns must enforce the same expansion budget as patterns.
+test('every modern glob owner rejects amplified ignore patterns', () => {
+  for (const name of ['archiver-utils', 'rimraf', '@babel/cli']) {
+    const owner = createRequire(require.resolve(name + '/package.json'));
+    const code = `
+      const assert = require('node:assert/strict');
+      const glob = require(${JSON.stringify(owner.resolve('glob'))});
+      const payload = Array.from({ length: 14 }, (_, i) => '**/../x' + i + '/y' + i).join('/');
+      assert.throws(
+        () => glob.sync('*', { cwd: process.cwd(), platform: 'posix', ignore: [payload] }),
+        { name: 'RangeError', message: "optimizationLevel 2: too many patterns from '**/..'" }
+      );
+    `;
+    execFileSync(process.execPath, ['--max-old-space-size=192', '-e', code], {
+      encoding: 'utf8',
+      timeout: 6000,
+    });
   }
 });
