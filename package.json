@@ -64,7 +64,7 @@
     "nodemon": "^3.1.14",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.3.1",
-    "redis": "^5.12.1",
+    "redis": "^5.12.3",
     "release-it": "^17.11.0",
     "rimraf": "^5.0.10",
     "sharp": "0.35.5"
@@ -74,7 +74,7 @@
     "aws-sdk": "^2.1693.0",
     "crypto-js": "^4.2.0",
     "mongoose": "^9.12.1",
-    "redis": "^5.12.1"
+    "redis": "^5.12.3"
   },
   "resolutions": {
     "@conventional-changelog/git-client": "2.7.0",
