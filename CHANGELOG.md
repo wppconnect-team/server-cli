@@ -1,3 +1,9 @@
+## [1.3.73](https://github.com/wppconnect-team/server-cli/compare/v1.3.72...v1.3.73) (2026-11-17)
+
+### Bug Fixes
+
+- enforce glob ignore budgets across modern dependency owners ([9cb6f43](https://github.com/wppconnect-team/server-cli/commit/9cb6f43a5ddb0dddc5ca72b0cf09b5ba46da9f27))
+
 ## [1.3.72](https://github.com/wppconnect-team/server-cli/compare/v1.3.71...v1.3.72) (2026-11-14)
 
 ## [1.3.71](https://github.com/wppconnect-team/server-cli/compare/v1.3.70...v1.3.71) (2026-11-14)
