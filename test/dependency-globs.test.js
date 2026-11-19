@@ -21,6 +21,8 @@ const os = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
 
+const OVERRIDDEN_MINIMATCH_VERSION = '11.0.9';
+
 const normalizePaths = (values) => values.map((value) => value.split(path.sep).join('/')).sort();
 
 function assertPatternBudget(modulePath) {
@@ -103,7 +105,7 @@ test('legacy glob retains its callable minimatch and brace expansion APIs', () =
 
 test('nodemon retains its named minimatch API for watched file patterns', () => {
   const owner = createRequire(require.resolve('nodemon'));
-  assert.equal(owner('minimatch/package.json').version, '11.0.8');
+  assert.equal(owner('minimatch/package.json').version, OVERRIDDEN_MINIMATCH_VERSION);
   const { minimatch } = owner('minimatch');
   assert.equal(minimatch('src/index.js', 'src/{index,config}.js'), true);
   assert.equal(minimatch('src/ignored.js', 'src/{index,config}.js'), false);
@@ -119,7 +121,7 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
       fs.writeFileSync(path.join(directory, 'nested', name), 'fixture');
     const archiveOwner = createRequire(require.resolve('archiver'));
     const traversalOwner = createRequire(archiveOwner.resolve('readdir-glob'));
-    assert.equal(traversalOwner('minimatch/package.json').version, '11.0.8');
+    assert.equal(traversalOwner('minimatch/package.json').version, OVERRIDDEN_MINIMATCH_VERSION);
     const zip = archiver('zip');
     const chunks = [];
     const ended = new Promise((resolve, reject) => {
@@ -147,7 +149,7 @@ test('actual Archiver ZIP traversal keeps brace, dotfile and exclusion semantics
 test('the actual Archiver traversal engine rejects excessive first-phase work', () => {
   const archiveOwner = createRequire(require.resolve('archiver'));
   const owner = createRequire(archiveOwner.resolve('readdir-glob'));
-  assert.equal(owner('minimatch/package.json').version, '11.0.8');
+  assert.equal(owner('minimatch/package.json').version, OVERRIDDEN_MINIMATCH_VERSION);
   const modulePath = owner.resolve('minimatch');
   assertPatternBudget(modulePath);
 });
