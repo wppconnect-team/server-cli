@@ -111,7 +111,7 @@
     "puppeteer": "25.18.1",
     "http-cache-semantics": "4.3.0",
     "browserslist": "4.29.5",
-    "baseline-browser-mapping": "2.11.37",
+    "baseline-browser-mapping": "2.11.39",
     "**/lodash": "4.18.1",
     "tar": "7.5.23",
     "tmp": "0.2.7",
