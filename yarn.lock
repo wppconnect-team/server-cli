@@ -5801,23 +5801,23 @@ mongodb-connection-string-url@^7.0.2:
     "@types/whatwg-url" "^13.0.0"
     whatwg-url "^14.1.0"
 
-mongodb@~7.8:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-7.8.0.tgz#d9f7a9d40caecbdaef9a34ed6806c39c4571615a"
-  integrity sha512-p2NKagbQ41+daACG/ZSvhTzeAo+DoEyWE9Cmpf/SyP3pTC43+X0mwKE/44PpKtCxp5wOxnXz+t2pXEZRSkt9Yg==
+mongodb@~7.9:
+  version "7.9.1"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-7.9.1.tgz#ed40b18d292d6065d58adb9284407e5909830d20"
+  integrity sha512-OWtk/bcf8tx4Qe6lB8OsMksOwGGhC2FH+zl5UNwE+L7uz2VQDhCcnJThAvInEaBrEDaSsUWlMRbuFR4/TjF44w==
   dependencies:
     "@mongodb-js/saslprep" "^1.5.0"
     bson "^7.3.2"
     mongodb-connection-string-url "^7.0.2"
 
-mongoose@^9.12.1:
-  version "9.12.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.12.1.tgz#981a019b94410190f66f633dd67a27421e248fd6"
-  integrity sha512-wPw1NKurTDShT+kr/JJvhdwPKIJkxFJv5GEbv++QahN8snPR9Fp/BFg6nQbbCyUHBB8DexwwlCQW6SfBD99QCg==
+mongoose@^9.13.1:
+  version "9.13.1"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.13.1.tgz#3ed07847c6c6d1cb7ccc90af7cbbbe1eb7bf566e"
+  integrity sha512-P2rNBaSgGIYDrAQtN/4xmsSMFy00UKhWED5pTuhpSzknopozrtdgRu9KFrZZmxpFX7Z4f2Jl5nFoo8iHVBzE/A==
   dependencies:
     "@standard-schema/spec" "^1.1.0"
     kareem "3.4.1"
-    mongodb "~7.8"
+    mongodb "~7.9"
     mpath "0.9.0"
     mquery "6.0.1"
     ms "2.1.3"
