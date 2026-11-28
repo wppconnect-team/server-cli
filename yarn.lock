@@ -2022,10 +2022,10 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@puppeteer/browsers@3.2.7":
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/@puppeteer/browsers/-/browsers-3.2.7.tgz#cda371f873fb908eced7ac9b153bef489a921a06"
-  integrity sha512-B3C/v8OEEaJYcN1IzzgbPmt+GbFANr4Mf/NrqNuGk/dIchrv6quNqxgT+A6qE0Ge0MN95NjKUddcR1JMpYRMWA==
+"@puppeteer/browsers@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@puppeteer/browsers/-/browsers-3.3.0.tgz#e8e3e4c313f881b0656cddaa5f6b79d91bb783fc"
+  integrity sha512-ZiOVHQ5KmsinwZJMwRc/a3xsGHbi9dRuAyf2gq4i9J5vRaI4r7SSIaJUniF1JVClG+qNoVdtBBWfL08N9Oib6g==
   dependencies:
     modern-tar "^0.8.6"
     yargs "^18.0.0"
@@ -3760,10 +3760,10 @@ detect-libc@^2.1.2:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.1.2.tgz#689c5dcdc1900ef5583a4cb9f6d7b473742074ad"
   integrity sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==
 
-devtools-protocol@0.0.1717327:
-  version "0.0.1717327"
-  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1717327.tgz#774afee17221b6f251c24857a53466ec275cf689"
-  integrity sha512-3RDLDzyvv8XAYf1L+TL1og0EEk0eOW1Jn0yi88uG6Bj8fUKO1ZKfgNtwbJkqf5SWdPDS4VGEPxwdUWz78V6Xcg==
+devtools-protocol@0.0.1724436:
+  version "0.0.1724436"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1724436.tgz#8a8fb2c7d07b5d78f225b033b7f70642a05969ce"
+  integrity sha512-GcO1782pvzpmY4pQO1zjr8WZ95Wv8GodOs0v5J9QWwLGulTzfYIYECEd9iUsnqJmcehu+VMKxZquvjY8T2jhAA==
 
 dijkstrajs@^1.0.1:
   version "1.0.3"
@@ -5419,7 +5419,7 @@ lighthouse-logger@^1.0.0:
     debug "^2.6.9"
     marky "^1.2.2"
 
-lilconfig@^3.1.4:
+lilconfig@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-3.1.5.tgz#7c9342a74d602bb15c0a1ca67f2c99be056c4656"
   integrity sha512-aRAOI9Ia43ygL4o1EOmC/sc/0OFxrm7qcQngiIyWaqVnSnz932ybJ07zyCcgMNGSDP8Yxaf88Xj1zHEXmvQ4SA==
@@ -6422,17 +6422,17 @@ pupa@^3.1.0:
   dependencies:
     escape-goat "^4.0.0"
 
-puppeteer-core@25.18.1:
-  version "25.18.1"
-  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-25.18.1.tgz#447b2c8ea7abd8072c348a9367df9033052372d0"
-  integrity sha512-C0wHOJHDfAggGBtN5uUfsJGpeSKtPL5jzhgQYDuz4XKeOG1FUkxeZI2M5yK7AUyrdHO+RgDuiCfjmOpcw3PYTA==
+puppeteer-core@25.19.0:
+  version "25.19.0"
+  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-25.19.0.tgz#1869ccb8c085787f3b13b936a4bef94bb877238c"
+  integrity sha512-F4pw8kpSczJS3TCHBw7/qskDxv4cMj09oOv7BwhHGYOerxLF1Sk2t4tpWlLvy6Vx/mM6TuqkDj4j0j3PRN1FiA==
   dependencies:
-    "@puppeteer/browsers" "3.2.7"
+    "@puppeteer/browsers" "3.3.0"
     chromium-bidi "157.0.8090-0"
-    devtools-protocol "0.0.1717327"
+    devtools-protocol "0.0.1724436"
     typed-query-selector "^2.12.3"
     webdriver-bidi-protocol "1.0.2"
-    ws "^8.22.1"
+    ws "^8.23.0"
 
 puppeteer-extra-plugin-stealth@^2.11.2:
   version "2.11.2"
@@ -6481,16 +6481,16 @@ puppeteer-extra@^3.3.6:
     debug "^4.1.1"
     deepmerge "^4.2.2"
 
-puppeteer@25.18.1, puppeteer@^25.16.0:
-  version "25.18.1"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-25.18.1.tgz#a0e702e2a063bf96c6558029d7c53f590ea68d49"
-  integrity sha512-fCsfwERKluvC84jsVyhDoBZMNuI8t5FFnWXcTdH1vn3NhMk6clZcrF0Da2se6/Hj6CBJ+2PRPpqeV0qPIETeJA==
+puppeteer@25.19.0, puppeteer@^25.16.0:
+  version "25.19.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-25.19.0.tgz#5f6bd83c19671325a985122551dea819b65c3cbc"
+  integrity sha512-38yJg6bAi6TOfQr/UTKllIVfm5zMWxBzURETCF3mzSylKQr9yUMyLz7YMl2yJCgfkJfhRl+j0qeKtm++X4J68w==
   dependencies:
-    "@puppeteer/browsers" "3.2.7"
+    "@puppeteer/browsers" "3.3.0"
     chromium-bidi "157.0.8090-0"
-    devtools-protocol "0.0.1717327"
-    lilconfig "^3.1.4"
-    puppeteer-core "25.18.1"
+    devtools-protocol "0.0.1724436"
+    lilconfig "^3.1.5"
+    puppeteer-core "25.19.0"
     typed-query-selector "^2.12.3"
 
 qrcode-terminal@^0.12.0:
@@ -7861,7 +7861,7 @@ ws@8.22.2, ws@^8.21.3, ws@~8.17.1:
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.22.2.tgz#b1762f4e4ac87ab44aa358f680cdf5d08b166d37"
   integrity sha512-/rEZ2ejown2N5gxVTHUu9bVVC7ttu0/Tgzf5hbTOixR3Fs7mbbXgn2DbdbcKgJOmpQMtrIUWivtYuVMnp/W/yA==
 
-ws@^8.22.1, ws@^8.23.0:
+ws@^8.23.0:
   version "8.23.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.23.0.tgz#e1af4314ad9d4cfde4684d08a9f09b322830e84e"
   integrity sha512-wCkmX8QMOrKjgO8HW2WyDbTSGeqkocxgDzS9iR79rEAexty6/2qzilx3Ag8Tqf9ykop3irLKle0MtVn5qjVnoQ==
